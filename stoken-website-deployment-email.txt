@@ -1,0 +1,51 @@
+Subject: Stoken website deployed - provisional URL, video assets, and next steps
+
+Hi Stoken team,
+
+The latest version of the Stoken website has now been deployed.
+
+Provisional URL:
+https://cadmos-finance.github.io/stoken-front/index.html
+
+This is temporary while I have not configured the DNS yet. Once DNS is set up, we can point the proper Stoken domain to the site.
+
+A few points to validate:
+
+1. Video assets purchase
+
+The website currently embeds the Pond5 watermarked preview videos. Are you comfortable buying the final licensed versions? Estimated budget is around USD 1,000 total. This would give us better quality and remove the watermarks.
+
+Homepage:
+- https://www.pond5.com/fr/stock-footage/item/256179086-aerial-view-big-cargo-ship-bulk-carrier-loaded-grain-wheat-p
+- https://www.pond5.com/fr/stock-footage/item/227742770-aerial-view-big-bulk-carrier-ship-loaded-grain-wheat-port
+
+The Asset:
+- https://www.pond5.com/fr/stock-footage/item/163506748-copper-mill-warehouse-metal-plates-stocked-it
+- https://www.pond5.com/fr/stock-footage/item/203823134-metal-copper-plumbing-pipes-stack-shiny-reflections-warehous
+
+How It Works:
+- https://www.pond5.com/stock-footage/item/73422422-aerial-footage-overhead-container-terminal-shipping-logistic
+- https://www.pond5.com/fr/stock-footage/item/81188251-aerial-top-down-loaded-freight-train-leaving-industrial-carg
+
+For Issuers:
+- https://www.pond5.com/fr/stock-footage/item/241484310-aerial-drone-view-rosia-poieni-open-pit-copper-mine-romania
+- https://www.pond5.com/stock-footage/item/140173507-loading-iron-ore-concentrate-cargo-hold-capesize-bulk-carrie
+
+About:
+- https://www.pond5.com/stock-footage/item/90886137-aerial-view-oil-depot-tank-farm-or-oil-terminal-industrial-f
+- https://www.pond5.com/ja/stock-footage/item/219347816-aerial-view-oil-terminal-storage-tank-farm-tanker-port
+
+2. Contact flow
+
+Peter mentioned that you did not want a contact form. For context, adding one would imply publishing a light backend. So for now I wired the contact actions to open an email to:
+
+info@stoken.finance
+
+I have defined this as an alias for you, Sergei.
+
+3. Editing workflow
+
+To make future edits easier, I intend to wire a light agent sometime next week. You would be able to speak to it directly and it could push updates to the repo.
+
+Best,
+[Your Name]

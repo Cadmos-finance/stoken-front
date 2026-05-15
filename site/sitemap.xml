@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/index.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/the-asset.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/how-it-works.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/for-issuers.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/about.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://cadmos-finance.github.io/stoken-front/legal.html</loc>
+    <lastmod>2026-05-15</lastmod>
+    <priority>0.4</priority>
+  </url>
+</urlset>

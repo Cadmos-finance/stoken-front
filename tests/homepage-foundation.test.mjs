@@ -75,7 +75,7 @@ const evaluation = await send("Runtime.evaluate", {
     const mono = getComputedStyle(document.querySelector(".hero__eyebrow")).fontFamily;
     const navTexts = [...document.querySelectorAll(".nav__links a")].map(a => a.textContent.trim());
     const launch = document.querySelector('.nav__cta a[href*="app.stoken.finance"]');
-    const request = document.querySelector('.nav__cta a[href="#request"]');
+    const request = document.querySelector('.nav__cta a[href^="mailto:info@stoken.finance"]');
     const heroTitle = document.querySelector(".hero__title");
     return {
       title: heroTitle?.textContent.replace(/\\s+/g, " ").trim() || "",
@@ -84,6 +84,7 @@ const evaluation = await send("Runtime.evaluate", {
       navTexts,
       launchVisible: visibleText(launch),
       requestVisible: visibleText(request),
+      requestHref: request?.getAttribute("href") || "",
       launchText: launch?.textContent.replace(/\\s+/g, " ").trim() || ""
     };
   })()`
@@ -116,6 +117,9 @@ if (!result.launchVisible || result.launchText !== "Launch Platform") {
 }
 if (!result.requestVisible) {
   failures.push("expected visible Request Access nav CTA");
+}
+if (!/subject=Request%20Access/.test(result.requestHref)) {
+  failures.push(`expected Request Access nav CTA to open mailto directly, got "${result.requestHref}"`);
 }
 if (!/Inter/i.test(result.bodyFont)) {
   failures.push(`expected Inter body font, got "${result.bodyFont}"`);

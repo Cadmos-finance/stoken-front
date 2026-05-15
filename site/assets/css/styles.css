@@ -1473,7 +1473,11 @@ ul { list-style: none; }
   margin-bottom: 60px;
 }
 @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
-.footer__brand img { width: 110px; margin-bottom: 18px; }
+.footer__brand > a {
+  display: inline-flex;
+  margin-bottom: 18px;
+}
+.footer__brand img { width: 110px; }
 .footer__brand p { color: var(--mute); font-size: 0.9rem; max-width: 32ch; }
 .footer h4 {
   font-family: var(--mono);
@@ -1961,6 +1965,11 @@ ul { list-style: none; }
 }
 .contact-card__lines a:last-child, .contact-card__lines p:last-child { border-bottom: 0; }
 .contact-card__lines a:hover { color: var(--green); }
+.contact-card__button {
+  --bg: var(--ink);
+  --fg: var(--cream);
+  margin-top: 24px;
+}
 
 /* --- Mission / Vision (about) ------------------------------------- */
 .mv-grid {

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "test:homepage": "node tests/homepage-foundation.test.mjs && node tests/homepage-hero.test.mjs && node tests/homepage-routing.test.mjs && node tests/homepage-proof-band.test.mjs && node tests/homepage-facility-preview.test.mjs && node tests/homepage-capital-flow.test.mjs && node tests/homepage-capabilities.test.mjs && node tests/homepage-finish.test.mjs && node tests/homepage-verification.test.mjs && node tests/page-hero-videos.test.mjs",
+    "test:homepage": "node tests/homepage-foundation.test.mjs && node tests/homepage-hero.test.mjs && node tests/homepage-routing.test.mjs && node tests/homepage-proof-band.test.mjs && node tests/homepage-facility-preview.test.mjs && node tests/homepage-capital-flow.test.mjs && node tests/homepage-capabilities.test.mjs && node tests/homepage-finish.test.mjs && node tests/homepage-verification.test.mjs && node tests/page-hero-videos.test.mjs && node tests/contact-mailto.test.mjs",
     "video:xai": "node scripts/generate-xai-hero-video.mjs"
   }
 }

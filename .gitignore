@@ -1,0 +1,7 @@
+.env
+.env.*
+!.env.example
+*:Zone.Identifier
+
+site/assets/video/stoken-hero-candidate-*.mp4
+site/assets/video/stoken-hero-candidate-*.webm

@@ -1939,6 +1939,9 @@ ul { list-style: none; }
   border-radius: 18px;
   background: var(--cream);
   position: relative;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
 }
 .contact-card__role {
   font-family: var(--mono);
@@ -1952,23 +1955,21 @@ ul { list-style: none; }
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: 0;
-  margin-bottom: 22px;
+  margin-bottom: 18px;
 }
-.contact-card__lines a, .contact-card__lines p {
-  display: block;
-  font-family: var(--mono);
-  font-size: 0.92rem;
+.contact-card__text {
+  font-size: 0.98rem;
+  line-height: 1.55;
   color: var(--ink);
-  padding: 6px 0;
-  border-bottom: 1px solid var(--cream-line);
-  transition: color 0.2s;
+  opacity: 0.74;
+  max-width: 30ch;
 }
-.contact-card__lines a:last-child, .contact-card__lines p:last-child { border-bottom: 0; }
-.contact-card__lines a:hover { color: var(--green); }
 .contact-card__button {
   --bg: var(--ink);
   --fg: var(--cream);
-  margin-top: 24px;
+  justify-content: center;
+  margin-top: auto;
+  align-self: flex-start;
 }
 
 /* --- Mission / Vision (about) ------------------------------------- */

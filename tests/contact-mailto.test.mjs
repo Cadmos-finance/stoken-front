@@ -23,12 +23,30 @@ const aboutHtml = readFileSync(path.join(root, "site/about.html"), "utf8");
 const contactHtml = aboutHtml.match(/<section class="section section--cream" id="contact"[\s\S]*?<\/section>/)?.[0] || "";
 const visibleEmailLinks = contactHtml.match(/>info@stoken\.finance</g) || [];
 const contactButtons = contactHtml.match(/class="btn contact-card__button"/g) || [];
+const contactTextBlocks = contactHtml.match(/class="contact-card__text"/g) || [];
 
 if (visibleEmailLinks.length !== 0) {
   failures.push(`expected About contact cards not to render repeated clear email text, got ${visibleEmailLinks.length}`);
 }
 if (contactButtons.length !== 3) {
   failures.push(`expected one mailto button per About contact card, got ${contactButtons.length}`);
+}
+if (contactTextBlocks.length !== 3) {
+  failures.push(`expected balanced contact-card text blocks, got ${contactTextBlocks.length}`);
+}
+for (const label of ["Request access", "Discuss facility", "Contact office"]) {
+  if (!contactHtml.includes(`>${label}</a>`)) {
+    failures.push(`expected differentiated contact CTA "${label}"`);
+  }
+}
+const styles = readFileSync(path.join(root, "site/assets/css/styles.css"), "utf8");
+const cardBlock = styles.match(/\.contact-card\s*\{[\s\S]*?\n\}/)?.[0] || "";
+const buttonBlock = styles.match(/\.contact-card__button\s*\{[\s\S]*?\n\}/)?.[0] || "";
+if (!cardBlock.includes("display: flex;") || !cardBlock.includes("flex-direction: column;")) {
+  failures.push("expected contact cards to use a vertical flex layout");
+}
+if (!buttonBlock.includes("margin-top: auto;")) {
+  failures.push("expected contact buttons to align to the bottom of each card");
 }
 
 if (failures.length) {

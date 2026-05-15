@@ -1934,14 +1934,15 @@ ul { list-style: none; }
 @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; } }
 
 .contact-card {
-  padding: 32px;
+  padding: 28px;
   border: 1px solid var(--cream-line);
   border-radius: 18px;
   background: var(--cream);
   position: relative;
-  min-height: 260px;
+  min-height: 224px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 .contact-card__role {
   font-family: var(--mono);
@@ -1949,13 +1950,11 @@ ul { list-style: none; }
   letter-spacing: 0;
   text-transform: uppercase;
   color: var(--green);
-  margin-bottom: 14px;
 }
 .contact-card h4 {
   font-size: 1.45rem;
   font-weight: 700;
   letter-spacing: 0;
-  margin-bottom: 18px;
 }
 .contact-card__text {
   font-size: 0.98rem;
@@ -1968,8 +1967,10 @@ ul { list-style: none; }
   --bg: var(--ink);
   --fg: var(--cream);
   justify-content: center;
-  margin-top: auto;
+  margin-top: 8px;
   align-self: flex-start;
+  padding: 11px 16px;
+  font-size: 0.84rem;
 }
 
 /* --- Mission / Vision (about) ------------------------------------- */

@@ -45,8 +45,11 @@ const buttonBlock = styles.match(/\.contact-card__button\s*\{[\s\S]*?\n\}/)?.[0]
 if (!cardBlock.includes("display: flex;") || !cardBlock.includes("flex-direction: column;")) {
   failures.push("expected contact cards to use a vertical flex layout");
 }
-if (!buttonBlock.includes("margin-top: auto;")) {
-  failures.push("expected contact buttons to align to the bottom of each card");
+if (!cardBlock.includes("gap: 16px;") || !cardBlock.includes("min-height: 224px;")) {
+  failures.push("expected contact cards to use compact, even spacing");
+}
+if (!buttonBlock.includes("padding: 11px 16px;") || !buttonBlock.includes("font-size: 0.84rem;")) {
+  failures.push("expected contact buttons to use compact secondary-action sizing");
 }
 
 if (failures.length) {

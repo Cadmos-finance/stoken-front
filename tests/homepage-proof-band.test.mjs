@@ -13,6 +13,9 @@ await withHomepage(async ({ send }) => {
         imageSrc: img?.getAttribute("src") || "",
         imageAlt: img?.getAttribute("alt") || "",
         imageLoaded: !!img && img.complete && img.naturalWidth > 0 && img.naturalHeight > 0,
+        href: item.getAttribute("href") || "",
+        target: item.getAttribute("target") || "",
+        rel: item.getAttribute("rel") || "",
         visible: visibleText(item),
         filter: style.filter,
         opacity: style.opacity
@@ -25,13 +28,13 @@ await withHomepage(async ({ send }) => {
 
   const failures = [];
   const expected = [
-    { label: "Moody's", src: "assets/img/partners/moodys.png" },
-    { label: "Cadmos", src: "assets/img/partners/cadmos-gold.svg" },
-    { label: "SO-FIT", src: "assets/img/partners/so-fit.svg" },
-    { label: "Bonnard Lawson", src: "assets/img/partners/bonnard-lawson.svg" }
+    { label: "Moody's", src: "assets/img/partners/moodys.png", href: "https://www.moodys.com/" },
+    { label: "Cadmos", src: "assets/img/partners/cadmos-gold.svg", href: "https://www.cadmos.finance/" },
+    { label: "SO-FIT", src: "assets/img/partners/so-fit.svg", href: "https://so-fit.ch/" },
+    { label: "Bonnard Lawson", src: "assets/img/partners/bonnard-lawson.svg", href: "https://www.bonnard-lawson.com/" }
   ];
   if (!result.present || !result.visible) failures.push("expected visible high-trust proof band");
-  for (const { label, src } of expected) {
+  for (const { label, src, href } of expected) {
     const item = result.items.find(entry => entry.visible && entry.label.includes(label));
     if (!item) {
       failures.push(`expected visible proof item for ${label}, got ${JSON.stringify(result.items)}`);
@@ -42,6 +45,9 @@ await withHomepage(async ({ send }) => {
     }
     if (!item.imageLoaded) {
       failures.push(`expected ${label} logo image to load, got ${JSON.stringify(item)}`);
+    }
+    if (item.href !== href || item.target !== "_blank" || !item.rel.includes("noopener")) {
+      failures.push(`expected ${label} logo to link to partner site ${href}, got ${JSON.stringify(item)}`);
     }
   }
   if (!result.appearsBeforeWhatWeDo) failures.push("expected proof band to appear before the What we do section");

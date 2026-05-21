@@ -56,12 +56,9 @@
 </div>
 
 <header class="page-head">
-  <div class="page-head__bg" data-hero-video-playlist data-transition-ms="1800" data-transition-lead="1.8">
-    <video class="page-head__video is-active" autoplay muted playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video aria-hidden="false">
-      <source src="assets/video/073422422-aerial-footage-overhead-contai.mp4" type="video/mp4">
-    </video>
-    <video class="page-head__video" muted playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video aria-hidden="true">
-      <source src="assets/video/081188251-aerial-top-down-loaded-freight.mp4" type="video/mp4">
+  <div class="page-head__bg">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="8" aria-hidden="false">
+      <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
   <div class="wrap">
@@ -72,7 +69,7 @@
 </header>
 
 <!-- 3.1 From Trade to Token — split scroll -->
-<section class="section" id="trade-to-token">
+<section class="section section--ink" id="trade-to-token">
   <div class="wrap">
     <div style="margin-bottom: 60px;" class="reveal">
       <div class="eyebrow">From trade to token</div>
@@ -129,7 +126,7 @@
               <path d="M40 200 A 140 140 0 0 1 320 200" stroke-width="2"/>
               <path d="M40 200 A 140 140 0 0 1 320 200" stroke="#63a0ad" stroke-width="14" stroke-dasharray="220 500"/>
             </g>
-            <text x="180" y="190" text-anchor="middle" fill="#f9f6e6" font-family="Inter,sans-serif" font-weight="700" font-size="32">BBB+</text>
+            <text x="180" y="190" text-anchor="middle" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="32">BBB+</text>
             <text x="180" y="216" text-anchor="middle" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">DUAL LAYER RATING</text>
             <g font-family="monospace" font-size="9" fill="#f9f6e6" opacity="0.7" letter-spacing="0">
               <text x="40" y="222">B</text>
@@ -172,9 +169,9 @@
             <text x="100" y="108" fill="#f9f6e6" font-family="monospace" font-size="11">0xST.0001</text>
             <line x1="100" y1="120" x2="260" y2="120" stroke="#63a0ad" stroke-opacity="0.3"/>
             <text x="100" y="146" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">RATING</text>
-            <text x="100" y="166" fill="#f9f6e6" font-family="Inter,sans-serif" font-weight="700" font-size="22">BBB+</text>
+            <text x="100" y="166" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="22">BBB+</text>
             <text x="200" y="146" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">YIELD</text>
-            <text x="200" y="166" fill="#f9f6e6" font-family="Inter,sans-serif" font-weight="700" font-size="22">8.4%</text>
+            <text x="200" y="166" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="22">8.4%</text>
             <text x="100" y="192" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">MATURITY</text>
             <text x="100" y="208" fill="#f9f6e6" font-family="monospace" font-size="11">2026-12-15</text>
             <!-- ETH badge -->
@@ -219,7 +216,7 @@
 </section>
 
 <!-- 3.2 How the Money Moves -->
-<section class="section section--ink" id="money-moves">
+<section class="section section--green" id="money-moves">
   <div class="wrap">
     <div class="grid-2 reveal" style="align-items: end; margin-bottom: 60px;">
       <div>
@@ -276,14 +273,13 @@
 </section>
 
 <!-- CTA -->
-<section class="cta-banner">
-  <div class="cta-banner__bg"></div>
+<section class="cta-banner cta-banner--cream">
   <div class="wrap">
     <h2 class="reveal">Step into the platform.</h2>
     <p class="reveal">Verified, whitelisted institutional capital meets rated commodity finance on Ethereum.</p>
     <div class="reveal" style="display:flex; justify-content: center; gap: 12px;">
-      <a class="btn" href="index.html#request">Request Access<svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn--ghost" href="for-issuers.html">For Issuers →</a>
+      <a class="btn btn--teal" href="index.html#request">Request Access<svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="btn btn--ghost btn--ghost-teal" href="for-issuers.html">For Issuers →</a>
     </div>
   </div>
 </section>

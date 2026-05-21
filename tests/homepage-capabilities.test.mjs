@@ -22,7 +22,9 @@ await withHomepage(async ({ send }) => {
   if (!result.present || !result.visible) failures.push("expected visible platform capability system section");
   if (!/Stoken Platform/i.test(result.platformText)) failures.push("expected central Stoken Platform label");
   for (const capability of expected) {
-    if (!result.capabilities.some(item => item.visible && item.text.includes(capability))) {
+    // SVG <text> renders the labels in uppercase by design; match case-insensitive.
+    const probe = capability.toLowerCase();
+    if (!result.capabilities.some(item => item.visible && item.text.toLowerCase().includes(probe))) {
       failures.push(`expected visible ${capability} capability, got ${JSON.stringify(result.capabilities)}`);
     }
   }

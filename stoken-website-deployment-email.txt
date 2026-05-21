@@ -45,7 +45,15 @@ I have defined this as an alias for you, Sergei.
 
 3. Editing workflow
 
-To make future edits easier, I intend to wire a light agent sometime next week. You would be able to speak to it directly and it could push updates to the repo.
+Romain raised a fair point about keeping Webflow/CMS so that future modifications do not become cumbersome.
+
+I am currently looking at the best path here: either keep the current custom site and automate edits through a lightweight agent connected to GitHub/Slack, or move back to a CMS/Webflow setup if that proves simpler for the team.
+
+My preference is to test the agent workflow first, since we already invested in this implementation and the current site is in a good place visually. The goal would be that you can request changes directly, and the agent can implement them in the repo with review before publication. I will compare both options before making a final recommendation.
 
 Best,
-[Your Name]
+Nassib Boueri
+
+Mobile: +33 6 85 73 65 20
+
+www.cadmos.io

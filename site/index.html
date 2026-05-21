@@ -131,40 +131,33 @@
   <a href="https://app.stoken.finance">Launch Platform →</a>
 </div>
 
-<!-- ============ HERO ============ -->
+<!-- ============ HERO VIDEO BAND ============ -->
 <header class="hero">
-  <div class="hero__bg" data-hero-video-playlist data-transition-ms="1800" data-transition-lead="1.8">
+  <div class="hero__bg">
     <img src="assets/img/backgrounds/bg-cover.jpg" alt="" class="hero__media hero__poster">
-    <video class="hero__video is-active" autoplay muted playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video aria-hidden="false">
-      <source src="assets/video/256179086-aerial-view-big-cargo-ship-bul.mp4" type="video/mp4">
+    <video class="hero__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="0" aria-hidden="false">
+      <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
-    <video class="hero__video" muted playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video aria-hidden="true">
-      <source src="assets/video/227742770-aerial-view-big-bulk-carrier-s.mp4" type="video/mp4">
-    </video>
-    <div class="hero__grid"></div>
   </div>
+</header>
 
-  <div class="wrap hero__inner">
-    <div class="hero__eyebrow"><span class="pulse"></span> SWISS DLT ACT · LEDGER-BASED SECURITIES</div>
-    <h1 class="hero__title">Commodity finance.<br><span class="em">On-chain.</span></h1>
-    <p class="hero__sub">Rated commodity trade finance facilities, tokenized on Ethereum and governed by Swiss law.</p>
-    <div class="hero__cta">
+<!-- ============ HERO HEADLINE ============ -->
+<section class="hero-headline" data-section="hero-headline">
+  <div class="wrap hero-headline__inner">
+    <h1 class="hero-headline__title">Commodity<br>finance<br><span class="em">On-Chain</span></h1>
+    <p class="hero-headline__sub">Rated commodity trade finance facilities, tokenized on Ethereum and governed by Swiss law.</p>
+    <div class="hero-headline__cta">
       <a class="btn" href="#request">
-        Request Access
+        Request access
         <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
       <a class="btn btn--ghost" href="for-issuers.html">Bring a Facility</a>
     </div>
   </div>
-
-  <div class="hero__meta">
-    <div><strong>Stoken S.A.</strong> · Geneva, CH</div>
-    <div>SO-FIT MEMBER · FINMA-RECOGNISED SRO</div>
-  </div>
-</header>
+</section>
 
 <!-- ============ AUDIENCE ROUTING ============ -->
-<section class="section section--cream audience-router" data-section="audience-routing">
+<section class="section audience-router" data-section="audience-routing">
   <div class="wrap">
     <div class="audience-router__head reveal">
       <div class="eyebrow">Two-sided capital network</div>
@@ -172,26 +165,28 @@
     </div>
 
     <div class="audience-router__grid">
-      <article class="audience-card reveal">
-        <img class="audience-card__image audience-card__image--investors" src="assets/img/audience/investors-trade-finance.jpg" alt="" loading="lazy">
-        <div class="audience-card__label">Investors</div>
-        <h2>Access rated real-economy yield.</h2>
-        <p>For qualified institutional investors, stablecoin issuers, DAO treasuries and crypto-native funds seeking short-term commodity finance exposure under Swiss law.</p>
-        <a class="btn" style="background: var(--ink); color: var(--cream);" href="#request">
-          Request Access
-          <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <article class="audience-card audience-card--investors reveal">
+        <div class="audience-card__inner">
+          <div class="audience-card__label">Investors</div>
+          <h2>Access rated real-economy yield.</h2>
+          <p>For qualified institutional investors, stablecoin issuers, DAO treasuries and crypto-native funds seeking short-term commodity finance exposure under Swiss law.</p>
+          <a class="btn" href="#request">
+            Request access
+            <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </article>
 
-      <article class="audience-card reveal">
-        <img class="audience-card__image audience-card__image--issuers" src="assets/img/audience/issuers-trade-finance.jpg" alt="" loading="lazy">
-        <div class="audience-card__label">Issuers</div>
-        <h2>Bring a commodity facility on-chain.</h2>
-        <p>For commodity traders looking for a complementary capital channel while keeping trade routes, counterparties and facility details confidential.</p>
-        <a class="btn btn--ghost" href="for-issuers.html">
-          Bring a Facility
-          <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+      <article class="audience-card audience-card--issuers reveal">
+        <div class="audience-card__inner">
+          <div class="audience-card__label">Issuers</div>
+          <h2>Bring a commodity facility on-chain.</h2>
+          <p>For commodity traders looking for a complementary capital channel while keeping trade routes, counterparties and facility details confidential.</p>
+          <a class="btn btn--ghost" href="for-issuers.html">
+            Bring a Facility
+            <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
       </article>
     </div>
   </div>
@@ -226,8 +221,8 @@
 <section class="section facility-preview-section" data-section="facility-preview">
   <div class="wrap facility-preview">
     <div class="facility-preview__copy reveal">
-      <div class="eyebrow">Specimen facility</div>
-      <h2 class="display-2" style="margin-top: 18px;">A single facility, visible before capital moves.</h2>
+      <div class="eyebrow eyebrow--lg">Specimen facility</div>
+      <h2 class="display-2" style="margin-top: 22px;">A single facility, visible before capital moves.</h2>
       <p class="lede" style="margin-top: 22px;">Illustrative terms only. This is not a live offer or solicitation. Every Stoken represents one facility with its own rating, yield and maturity.</p>
     </div>
 
@@ -338,151 +333,68 @@
   <div class="wrap">
     <div class="capability-system__head reveal">
       <div class="eyebrow">What we do</div>
-      <h2 class="display-2" style="margin-top: 18px;">Four capabilities. <span class="italic" style="color: var(--light-green);">One platform.</span></h2>
+      <h2 class="display-2" style="margin-top: 22px;">Four capabilities <span class="italic" style="color: var(--light-green);">One platform</span></h2>
     </div>
 
-    <div class="capability-system__grid reveal">
-      <div class="capability-node capability-node--core">
-        <img src="assets/img/logos/picto-white.svg" alt="">
-        <strong>Stoken Platform</strong>
-        <span>Originate · rate · tokenize · distribute</span>
-      </div>
-
-      <article class="capability-tile capability-tile--one" data-capability="origination">
-        <span>01</span>
-        <h3>Origination</h3>
-        <p>Issuers are screened and assessed before any external rating or distribution process begins.</p>
-      </article>
-      <article class="capability-tile capability-tile--two" data-capability="rating">
-        <span>02</span>
-        <h3>Rating</h3>
-        <p>Each facility is rated through Stoken scoring, Moody's RiskCalc, or both.</p>
-      </article>
-      <article class="capability-tile capability-tile--three" data-capability="tokenization">
-        <span>03</span>
-        <h3>Tokenization</h3>
-        <p>The facility is issued as an ERC-20 token on Ethereum with defined yield and maturity.</p>
-      </article>
-      <article class="capability-tile capability-tile--four" data-capability="distribution">
-        <span>04</span>
-        <h3>Distribution</h3>
-        <p>Placed with stablecoin issuers, DAO treasuries and institutional investors on-chain.</p>
-      </article>
-    </div>
-  </div>
+    <div class="capability-platform reveal"><span class="visually-hidden">Stoken Platform — Originate · rate · tokenize · distribute.</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="115 209 900 377" class="capability-platform__svg" role="img" aria-label="Stoken Platform — Originate · rate · tokenize · distribute"><defs><clipPath id="clippath"><path d="M428.19 156.3h275.49v491.71H428.19z" class="st0"/></clipPath><clipPath id="clippath-1"><path d="M303.16 55.02h580.19v695.1H303.16z" class="st0"/></clipPath><clipPath id="clippath-2"><path d="M303.16 55.02h580.19v695.1H303.16z" class="st0"/></clipPath><linearGradient id="Dégradé_sans_nom_2" x1="811.05" x2="315.24" y1="401.72" y2="401.72" data-name="Dégradé sans nom 2" gradientTransform="rotate(-180 563.145 401.725)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff"/><stop offset="0" stop-color="#fcfcfc"/><stop offset=".16" stop-color="#b9b9b8"/><stop offset=".31" stop-color="#818180"/><stop offset=".45" stop-color="#565654"/><stop offset=".57" stop-color="#363635"/><stop offset=".68" stop-color="#232321"/><stop offset=".75" stop-color="#1d1d1b"/><stop offset=".78" stop-color="#1d1d1b"/><stop offset="1" stop-color="#1d1d1b"/></linearGradient><style>.st0,.st4{fill:none}.st8,.st9{font-weight:700}.st9{font-family:Montserrat-ExtraBold,Montserrat}.st10{fill:#f9f5e5}.st12{fill:#8dcfe1}.st8{font-family:Montserrat-Bold,Montserrat;font-size:12.21px;fill:#19242b}.st16{fill:#619ead;font-family:Montserrat-Medium,Montserrat;font-size:12.65px;font-weight:500}.st4{stroke:#619ead}.st18{letter-spacing:0}.st12{font-family:Montserrat-SemiBold,Montserrat;font-size:15.08px;font-weight:600}.st4{stroke-width:2.11px}.st9{font-size:20.56px;fill:#f9f4e5}.st35{letter-spacing:-.02em}.st45,.st52,.st62,.st63,.st66,.st67{letter-spacing:0}.st70{letter-spacing:.01em}.st71,.st72{letter-spacing:0}.st74,.st75,.st77,.st78{letter-spacing:.01em}.st80,.st81,.st82,.st83,.st85,.st86,.st87,.st88,.st89,.st90{letter-spacing:0}</style></defs><g style="isolation:isolate"><g id="What_we_do_x5F_Graphique"><path d="M567.39 570.69c85.8 0 155.36-69.55 155.36-155.36s-69.56-155.35-155.36-155.35-155.36 69.55-155.36 155.35 69.55 155.36 155.36 155.36Z" class="st4"/><text class="st9" data-capability="origination" transform="translate(238.46 269.86)">ORIGINATION</text><text class="st9" data-capability="rating" transform="translate(743.77 269.86)">RATING</text><path d="M130.38 403.01H397c19.81 0 35.87-16.06 35.87-35.87V221.26m572.59 181.75H738.84c-19.81 0-35.87-16.06-35.87-35.87V221.26M129.46 424.39h266.62c19.81 0 35.87 16.06 35.87 35.87v115.99m574.43-151.86H739.76c-19.81 0-35.87 16.06-35.87 35.87v115.99" class="st4"/><text class="st12" transform="translate(193.9 296.83)">Issuers are screened and </text><text class="st12" transform="translate(162.28 314.93)">assessed before any external </text><text class="st12" transform="translate(160.03 333.03)">rating or distribution process </text><text class="st12" transform="translate(332.85 351.13)">begins.</text><text class="st12" transform="translate(741.68 296.83)">Each facility is rated through </text><text class="st12" transform="translate(741.68 314.93)">Stoken scoring, Moody’s Risk</text><text class="st12" transform="translate(970.63 314.93)">-</text><text class="st12" transform="translate(741.67 333.03)">Calc, or both.</text><text class="st9" data-capability="tokenization" transform="translate(220.18 507.21)">TOKENIZATION</text><text class="st9" data-capability="distribution" transform="translate(743.77 507.21)">DISTRIBUTION</text><text class="st12" x="297" y="534.19" style="text-anchor:middle">The facility is issued as an ERC-20</text><text class="st12" x="297" y="552.3" style="text-anchor:middle">token on Ethereum with defined</text><text class="st12" x="297" y="570.4" style="text-anchor:middle">yield and maturity.</text><text class="st12" transform="translate(748.26 534.19)">Placed with stablecoin issuers, </text><text class="st12" transform="translate(748.26 552.29)">DAO treasuries and institutional </text><text class="st12" transform="translate(748.26 570.38)">investors on-chain.</text><text class="st16" transform="translate(371.8 227.83)">01</text><text class="st16" transform="translate(745.26 229.32)">02</text><text class="st16" transform="translate(745.26 462.48)">04</text><text class="st16" transform="translate(371.47 462.48)">03</text><path d="M567.39 536.47c66.9 0 121.14-54.23 121.14-121.14s-54.24-121.14-121.14-121.14-121.14 54.23-121.14 121.14 54.24 121.14 121.14 121.14" style="fill:#619ead"/><text class="st8" x="567" y="477.56" style="text-anchor:middle">Originate · rate</text><text class="st8" x="567" y="492.23" style="text-anchor:middle">tokenize · distribute</text><path d="M525.11 391.56v12.27c0 1.5.36 2.57 1.07 3.21s1.73.97 3.05.97c.64 0 1.28-.06 1.9-.19.62-.12 1.05-.24 1.26-.35l.05 5.95c-.32.14-.89.31-1.69.51-.8.19-1.78.3-2.92.3q-4.56 0-7.23-2.22c-1.79-1.48-2.68-3.74-2.68-6.78v-13.66h-5.09v-6.48h5.09v-7.23h7.18v7.23h7.82v6.48h-7.82Zm26.52 15.8c2.32 0 4.19-.73 5.6-2.2s2.12-3.43 2.12-5.89-.71-4.43-2.12-5.89-3.27-2.19-5.6-2.19-4.18.73-5.6 2.19c-1.41 1.46-2.11 3.43-2.11 5.89s.7 4.43 2.11 5.89 3.28 2.2 5.6 2.2m0 6.86c-2.21 0-4.25-.35-6.11-1.07-1.86-.71-3.45-1.72-4.79-3.02s-2.38-2.88-3.13-4.72-1.13-3.89-1.13-6.13.38-4.29 1.13-6.13 1.79-3.41 3.13-4.72c1.34-1.3 2.94-2.31 4.79-3.02 1.86-.71 3.89-1.07 6.11-1.07s4.25.36 6.11 1.07 3.45 1.73 4.8 3.02c1.34 1.31 2.38 2.88 3.13 4.72s1.13 3.89 1.13 6.13-.38 4.29-1.13 6.13-1.79 3.41-3.13 4.72c-1.34 1.3-2.94 2.31-4.8 3.02-1.86.72-3.89 1.07-6.11 1.07m20.52-.75v-42.86h7.28v25.02l9.96-10.55h10.24l-12.43 11.94 13.82 16.45h-9.53l-9.16-11.79-2.9 2.79v9z" class="st10"/><path d="M621.77 396.39c-.19-2.05-.88-3.59-2.08-4.64-1.21-1.04-2.82-1.57-4.82-1.57-2.01 0-3.64.53-4.89 1.6s-1.97 2.59-2.17 4.57l13.96.05Zm-6.47 17.91c-2.27 0-4.35-.36-6.24-1.07s-3.51-1.72-4.87-3.03-2.43-2.89-3.19-4.75c-.77-1.85-1.15-3.93-1.14-6.23 0-2.29.41-4.37 1.21-6.21s1.89-3.42 3.28-4.73q2.085-1.95 4.86-3c1.86-.69 3.83-1.04 5.91-1.03 2.01 0 3.9.35 5.67 1.01 1.78.67 3.32 1.65 4.64 2.95s2.37 2.88 3.13 4.75q1.155 2.805 1.14 6.36c0 .5-.03 1-.09 1.48s-.13.81-.2 1l-21.74-.07c.18 2.08.92 3.71 2.23 4.88 1.3 1.17 3.09 1.76 5.36 1.77 1.13 0 2.11-.1 2.92-.31.81-.22 1.48-.51 2.02-.88.53-.38.97-.8 1.31-1.26.34-.47.59-.93.74-1.4l7.21.03q-.345 1.83-1.29 3.6c-.62 1.18-1.51 2.23-2.65 3.14-1.13.92-2.55 1.65-4.24 2.2s-3.68.82-5.99.81m19.16-29.23h6v6.16c.78-2.43 2.1-4.18 3.94-5.28 1.84-1.09 3.95-1.63 6.35-1.63 1.78 0 3.35.29 4.68.86 1.34.57 2.48 1.33 3.4 2.28.93.94 1.62 2.03 2.09 3.24.46 1.21.7 2.48.7 3.8v18.96h-7.29v-16.6c0-1.82-.51-3.22-1.53-4.21-1.02-.98-2.45-1.47-4.31-1.47-2 0-3.62.58-4.88 1.74-1.25 1.16-1.87 2.72-1.87 4.69v15.85h-7.28z" class="st10"/><path d="M634.14 385.03h7.63v28.44h-7.63zm-151.82 18.48 6.93 3.8h10.86v-14.27l-4.12-2.29v-7.41l11.05 5.96v21.12c0 2.19-1.77 3.96-3.96 3.96h-16.76c-2.18 0-3.95-1.76-3.96-3.94l-.03-6.94Z" class="st10"/><path d="m507.03 381.6-6.93-3.8h-10.86v14.27l4.12 2.29v7.41l-11.05-5.96v-21.12c0-2.19 1.77-3.96 3.96-3.96h16.76c2.18 0 3.95 1.76 3.96 3.94l.03 6.94Z" class="st10"/><text style="font-size:27.24px;font-weight:700;font-family:Montserrat-ExtraBold,Montserrat;fill:#f9f5e5" transform="translate(492.04 445.79)">PLATFORM</text></g></g></svg></div>
 </section>
 
 <!-- ============ BUILT FOR INSTITUTIONAL CAPITAL ============ -->
-<section class="section section--ink">
+<section class="section investor-edge" data-section="investor-edge">
   <div class="wrap">
-    <div style="max-width: 720px; margin-bottom: 60px;" class="reveal">
+    <div class="investor-edge__head reveal">
       <div class="eyebrow">Investor edge</div>
-      <h2 class="display-1" style="margin-top: 20px;">Built for institutional capital.</h2>
+      <h2 class="display-1" style="margin-top: 22px;">Built for institutional capital</h2>
     </div>
 
-    <div class="usp-grid">
-      <div class="usp-card reveal">
-        <div class="usp-card__tag">USP 01 · Rating</div>
-        <h3>Dual layer credit rating.</h3>
-        <p>Every facility carries a credit rating. Stoken proprietary scoring, independent Moody's RiskCalc, or both.</p>
-      </div>
-      <div class="usp-card reveal">
-        <div class="usp-card__tag">USP 02 · Origination</div>
-        <h3>Origination quality.</h3>
-        <p>Every issuer is screened by a team with 25+ years of commodity finance experience across JPMorgan, Credit Suisse and BNP Paribas. Credit history, counterparty relationships, loan book and trade flows are reviewed in full before any facility is offered to investors.</p>
-      </div>
-      <div class="usp-card reveal">
-        <div class="usp-card__tag">USP 03 · Yield</div>
-        <h3>Real-economy yield.</h3>
-        <p>Short-term commodity trade finance facilities with indicative yields of <span class="mono" style="color: var(--light-green);">5&ndash;12%</span> and tenors up to 360 days. Uncorrelated to crypto market volatility.</p>
-      </div>
-      <div class="usp-card reveal">
-        <div class="usp-card__tag">USP 04 · Structure</div>
-        <h3>One Stoken. One facility.</h3>
-        <p>Every Stoken represents a single facility with its own credit rating, yield and maturity. No pooling. No hidden concentration risk. Investors know exactly what they own before committing capital.</p>
-      </div>
-    </div>
+    <div class="investor-edge__body">
+      <div class="investor-edge__bubbles reveal"><svg class="ie-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="250 145 620 510" role="img" aria-label="Four investor advantages: dual layer credit rating, origination quality, real-economy yield, one Stoken one facility"><defs><style>.ie-st3{fill:none;stroke:#619ead;stroke-width:1.78px}.ie-tag{fill:#619ead;font-family:Montserrat,sans-serif;font-size:12.65px;font-weight:500;letter-spacing:.04em;text-anchor:middle}.ie-title{fill:#19242b;font-family:Montserrat,sans-serif;font-size:20.5px;font-weight:800;letter-spacing:.02em;text-anchor:middle}.ie-desc{fill:#f9f5e5;font-family:Montserrat,sans-serif;font-size:12.65px;font-weight:500;text-anchor:middle}</style></defs><path d="M290.5 483.01h218.99c36.23 0 65.6-38.14 65.6-85.19v-19.88c0-47.05-29.37-85.19-65.6-85.19H290.5" class="ie-st3"/><path d="M820.46 292.76h-193.1c-36.23 0-65.6 38.14-65.6 85.19v19.88c0 47.05 29.37 85.19 65.6 85.19h193.1" class="ie-st3"/><path d="M726.3 635.01V532.1c0-36.23-29.37-65.6-65.6-65.6H477.03c-36.23 0-65.6 29.37-65.6 65.6v102.91m.01-470.77v77.68c0 36.23 29.37 65.59 65.6 65.59h183.67c36.23 0 65.6-29.37 65.6-65.59v-77.68" class="ie-st3"/><text class="ie-tag" x="568" y="188">USP 01 · Rating</text><text class="ie-title" x="568" y="210">DUAL LAYER CREDIT</text><text class="ie-title" x="568" y="233">RATING</text><text class="ie-desc" x="568" y="258">Every facility carries a credit rating. Stoken</text><text class="ie-desc" x="568" y="273">proprietary scoring, independent Moody&#8217;s</text><text class="ie-desc" x="568" y="288">RiskCalc, or both.</text><text class="ie-tag" x="412" y="330">USP 02 · Origination</text><text class="ie-title" x="412" y="352">ORIGINATION QUALITY</text><text class="ie-desc" x="412" y="378">Every issuer is screened by a team with 25+</text><text class="ie-desc" x="412" y="393">years of commodity finance experience across</text><text class="ie-desc" x="412" y="408">JPMorgan, Credit Suisse and BNP Paribas.</text><text class="ie-desc" x="412" y="423">Credit history, counterparty relationships,</text><text class="ie-desc" x="412" y="438">loan book and trade flows are reviewed in full</text><text class="ie-desc" x="412" y="453">before any facility is offered to investors.</text><text class="ie-tag" x="716" y="330">USP 03 · Yield</text><text class="ie-title" x="716" y="352">REAL-ECONOMY YIELD</text><text class="ie-desc" x="716" y="378">Short-term commodity trade finance</text><text class="ie-desc" x="716" y="393">facilities with indicative yields of 5&#8211;12%</text><text class="ie-desc" x="716" y="408">and tenors up to 360 days. Uncorre-</text><text class="ie-desc" x="716" y="423">lated to crypto market volatility.</text><text class="ie-tag" x="568" y="505">USP 04 · Structure</text><text class="ie-title" x="568" y="527">ONE STOKEN</text><text class="ie-title" x="568" y="549">ONE FACILITY</text><text class="ie-desc" x="568" y="573">Every Stoken represents a single facility</text><text class="ie-desc" x="568" y="588">with its own credit rating, yield and maturity.</text><text class="ie-desc" x="568" y="603">No pooling. No hidden concentration risk.</text><text class="ie-desc" x="568" y="618">Investors know exactly what they own before</text><text class="ie-desc" x="568" y="633">committing capital.</text></svg></div>
 
-    <!-- Stat row -->
-    <div class="metrics-strip" data-section="metrics-strip">
-      <div class="stat reveal">
-        <div class="stat__num tabular">$9T<span class="small">+ /yr</span></div>
-        <div class="stat__label">Commodity trade finance market</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num tabular">25<span class="small">+ yrs</span></div>
-        <div class="stat__label">Commodity finance experience</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num tabular">360<span class="small"> days</span></div>
-        <div class="stat__label">Maximum facility tenor</div>
-      </div>
-      <div class="stat reveal">
-        <div class="stat__num tabular">1<span class="small"> Stoken / facility</span></div>
-        <div class="stat__label">No pooling. No hidden risk.</div>
-      </div>
+      <aside class="investor-edge__stats reveal" data-section="metrics-strip" aria-label="Key metrics">
+        <div class="ie-stat">
+          <div class="ie-stat__num">$9T<span class="ie-stat__suffix">+ / yr</span></div>
+          <div class="ie-stat__label">Commodity trade finance market</div>
+        </div>
+        <div class="ie-stat">
+          <div class="ie-stat__num">25<span class="ie-stat__suffix">+ yrs</span></div>
+          <div class="ie-stat__label">Commodity finance experience</div>
+        </div>
+        <div class="ie-stat">
+          <div class="ie-stat__num">360<span class="ie-stat__suffix">days</span></div>
+          <div class="ie-stat__label">Maximum facility tenor</div>
+        </div>
+        <div class="ie-stat">
+          <div class="ie-stat__num">1 <span class="ie-stat__suffix">Stoken / facility</span></div>
+          <div class="ie-stat__label">No pooling. No hidden risk.</div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
 <!-- ============ SWISS REGULATED ============ -->
-<section class="section">
-  <div class="wrap">
-    <div style="max-width: 760px; margin-bottom: 64px;" class="reveal">
+<section class="section swiss-framework" data-section="swiss-framework">
+  <div class="wrap swiss-framework__inner">
+    <div class="swiss-framework__copy reveal">
       <div class="eyebrow">Swiss regulated credibility</div>
-      <h2 class="display-1" style="margin-top: 20px;">A framework <span class="italic" style="color: var(--light-green);">designed for capital.</span></h2>
+      <h2 class="display-1" style="margin-top: 22px;">A framework<br><span class="italic" style="color: var(--light-green);">designed for capital.</span></h2>
     </div>
 
-    <div class="pillars reveal">
-      <div class="pillar">
-        <div class="pillar__icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 1.5L4 5v6.5c0 5 3.6 9.6 9 12 5.4-2.4 9-7 9-12V5z"/>
-            <path d="M9 13l2.8 2.8L17 10"/>
-          </svg>
-        </div>
-        <h3>SO-FIT Member</h3>
-        <p>Stoken S.A. is a financial intermediary and member of SO-FIT, a FINMA-recognised Self-Regulatory Organisation operating under the Swiss Anti-Money Laundering Act.</p>
-      </div>
-
-      <div class="pillar">
-        <div class="pillar__icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M6 2h10l4 4v18H6z"/>
-            <path d="M16 2v4h4"/>
-            <path d="M9 12h8M9 16h8M9 20h5"/>
-          </svg>
-        </div>
-        <h3>Swiss DLT Act</h3>
-        <p>All issuances are structured as Ledger-based Securities under the Swiss DLT Act, entered into force 1 February 2021.</p>
-      </div>
-
-      <div class="pillar">
-        <div class="pillar__icon">
-          <svg viewBox="0 0 26 26" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M13 23s-8-7.5-8-13a8 8 0 1116 0c0 5.5-8 13-8 13z"/>
-            <circle cx="13" cy="10" r="3"/>
-          </svg>
-        </div>
-        <h3>Geneva, Switzerland</h3>
-        <p>Incorporated and operating under Swiss law. All issuances subject to Swiss jurisdiction by express choice of law.</p>
-      </div>
-    </div>
+    <div class="swiss-framework__graphic reveal"><svg class="sw-graphic" xmlns="http://www.w3.org/2000/svg" viewBox="290 45 605 715" role="img" aria-label="Swiss regulated framework"><defs><style>.sw-title{fill:#19252c;font-family:Montserrat,sans-serif;font-size:28px;font-weight:800;text-anchor:middle}.sw-desc{fill:#f9f5e5;font-family:Montserrat,sans-serif;font-size:14px;font-weight:700;text-anchor:middle}</style></defs><path d="M571.27 659.88c108.72 0 196.86-88.14 196.86-196.86s-88.14-196.86-196.86-196.86-196.86 88.13-196.86 196.86 88.14 196.86 196.86 196.86" style="fill:#296474"/><path d="M590.75 608.13c-5.25 75.1-70.39 131.73-145.49 126.48-75.03-5.24-131.73-70.46-126.48-145.5 5.25-75.1 70.39-131.73 145.5-126.48 45.92 3.21 84.93 28.82 107.11 65.4 5.65 9.31 16.76 13.76 27.19 10.66l.35-.11c9.79-2.91 16.58-11.75 16.95-21.95.05-1.41.13-2.83.23-4.26 1.11-15.95 5.16-31 11.56-44.65 7.68-16.38 4.36-35.81-8.29-48.75-12.7-12.98-32.18-16.81-48.72-9.32-26.15 11.85-55.56 17.52-86.22 15.25-98.21-7.27-171.23-92.14-163.8-190.34 7.33-96.91 91.31-169.9 188.29-163.66 96.41 6.2 171.84 91.91 165.7 188.32-1.7 26.64-9.18 51.51-21.14 73.48-9.83 18.06-6.84 40.4 7.53 55.1 12.05 12.32 29.87 16.86 46.45 12.18 14.12-3.99 29.2-5.57 44.72-4.27 67.6 5.64 118.95 64.66 115.18 132.38-3.9 70.27-64.5 123.53-134.46 118.63-41.8-2.92-77.4-25.95-98.03-58.96-5.64-9.02-16.64-13.12-26.83-10.09-9.97 2.96-16.84 12.07-16.96 22.47q-.045 3.975-.33 7.98" style="fill:#619ead"/><path d="M308.17 276.83c6.33 42.35 27.06 81.83 58.36 111.17 31.77 29.78 73.36 47.96 117.12 51.2 31.96 2.37 64.18-3.33 93.19-16.48 10.95-4.97 24.04-2.44 32.57 6.28 4.31 4.41 7.08 9.97 7.99 16.06.85 5.67 0 11.41-2.42 16.59M304.75 588.13c-.77 10.99-.34 22.04 1.27 32.84 4.99 33.36 21.38 64.51 46.17 87.7 25.16 23.54 57.94 37.83 92.32 40.23m287.64-87.87c37.74 2.64 74.14-9.69 102.52-34.71 28.36-25.02 45.15-59.61 47.24-97.41.52-9.47.09-19-1.31-28.34-4.59-30.71-19.64-59.51-42.37-81.09M689.16 260.16c.84-13.18.28-26.48-1.68-39.53-13.34-89.26-87.94-158.23-177.39-163.99-50.69-3.26-99.73 13.3-138.08 46.63" style="fill:none;stroke-miterlimit:10;stroke:#f9f5e5;stroke-linecap:round;stroke-width:2.44px"/><text class="sw-title" x="506" y="171.5">SO-FIT</text><text class="sw-title" x="506" y="202.5">Member</text><text class="sw-desc" x="506" y="229.5">Stoken S.A. is a financial intermediary</text><text class="sw-desc" x="506" y="246.5">and member of SO-FIT, a FINMA-reco-</text><text class="sw-desc" x="506" y="263.5">gnised Self-Regulatory Organisation</text><text class="sw-desc" x="506" y="280.5">operating under the Swiss Anti-</text><text class="sw-desc" x="506" y="297.5">Money Laundering Act.</text><text class="sw-title" x="447" y="539.5">Swiss</text><text class="sw-title" x="447" y="570.5">DLT Act</text><text class="sw-desc" x="447" y="597.5">All issuances are structured</text><text class="sw-desc" x="447" y="614.5">as Ledger-based Securities</text><text class="sw-desc" x="447" y="631.5">under the Swiss DLT Act,</text><text class="sw-desc" x="447" y="648.5">entered into force</text><text class="sw-desc" x="447" y="665.5">1 February 2021.</text><text class="sw-title" x="736" y="463.0">Geneva</text><text class="sw-title" x="736" y="494.0">Switzerland</text><text class="sw-desc" x="736" y="521.0">Incorporated and operating</text><text class="sw-desc" x="736" y="538.0">under Swiss law.</text><text class="sw-desc" x="736" y="555.0">All issuances subject</text><text class="sw-desc" x="736" y="572.0">to Swiss jurisdiction</text><text class="sw-desc" x="736" y="589.0">by express choice</text><text class="sw-desc" x="736" y="606.0">of law.</text></svg></div>
   </div>
 </section>
 
 <!-- ============ CTA Footer ============ -->
-<section class="cta-banner" id="request">
-  <div class="cta-banner__bg"></div>
+<section class="cta-banner cta-banner--cream" id="request">
   <div class="wrap">
-    <h2 class="reveal">Request access.<br><span style="color: var(--light-green);" class="italic">On-chain commodity yield, on Swiss terms.</span></h2>
+    <h2 class="reveal">Request access<br><span class="italic" style="color: var(--light-green);">On-chain commodity yield, on Swiss terms.</span></h2>
     <p class="reveal">Stoken is open to qualified institutional investors. Submit a request and our team will be in touch within 48 hours.</p>
     <div class="reveal" style="display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;">
-      <a class="btn" href="mailto:info@stoken.finance?subject=Request%20Access%20%E2%80%94%20Stoken">
-        Request Access
+      <a class="btn btn--teal" href="mailto:info@stoken.finance?subject=Request%20Access%20%E2%80%94%20Stoken">
+        Request access
         <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </a>
-      <a class="btn btn--ghost" href="mailto:info@stoken.finance?subject=Contact%20Stoken">Talk to the team</a>
+      <a class="btn btn--ghost btn--ghost-teal" href="for-issuers.html">Bring a Facility</a>
     </div>
   </div>
 </section>

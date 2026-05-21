@@ -5,3 +5,9 @@
 
 site/assets/video/stoken-hero-candidate-*.mp4
 site/assets/video/stoken-hero-candidate-*.webm
+site/assets/video/stoken-hero-loop-1080p.mp4
+
+# Local working / reference material (not part of the deployed site)
+Livraison/
+update/
+__MACOSX/

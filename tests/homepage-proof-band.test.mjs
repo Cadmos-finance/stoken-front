@@ -22,7 +22,7 @@ await withHomepage(async ({ send }) => {
       };
     });
     const proofTop = proof?.getBoundingClientRect().top ?? 99999;
-    const whatWeDoTop = document.querySelector('[data-section="platform-capabilities"], .sphere-block')?.getBoundingClientRect().top ?? 0;
+    const whatWeDoTop = document.querySelector('[data-section="platform-capabilities"]')?.getBoundingClientRect().top ?? 0;
     return { present: !!proof, visible: visibleText(proof), items, appearsBeforeWhatWeDo: proofTop < whatWeDoTop };
   })()`);
 

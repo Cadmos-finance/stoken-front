@@ -72,15 +72,16 @@ const evaluation = await send("Runtime.evaluate", {
   expression: `(() => {
     const visibleText = el => !!el && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden";
     const bodyFont = getComputedStyle(document.body).fontFamily;
-    const mono = getComputedStyle(document.querySelector(".hero__eyebrow")).fontFamily;
+    const eyebrowEl = document.querySelector(".hero-headline__eyebrow") || document.querySelector(".eyebrow");
+    const eyebrowFont = eyebrowEl ? getComputedStyle(eyebrowEl).fontFamily : "";
     const navTexts = [...document.querySelectorAll(".nav__links a")].map(a => a.textContent.trim());
     const launch = document.querySelector('.nav__cta a[href*="app.stoken.finance"]');
     const request = document.querySelector('.nav__cta a[href^="mailto:info@stoken.finance"]');
-    const heroTitle = document.querySelector(".hero__title");
+    const heroTitle = document.querySelector(".hero-headline__title");
     return {
       title: heroTitle?.textContent.replace(/\\s+/g, " ").trim() || "",
       bodyFont,
-      mono,
+      eyebrowFont,
       navTexts,
       launchVisible: visibleText(launch),
       requestVisible: visibleText(request),
@@ -106,7 +107,7 @@ if (!result || !Array.isArray(result.navTexts)) {
 }
 const failures = [];
 
-if (!/Commodity finance\.\s*On-chain\./i.test(result.title)) {
+if (!/Commodity\s*finance\s*On-[cC]hain/i.test(result.title)) {
   failures.push(`expected hero headline, got "${result.title}"`);
 }
 if (!result.navTexts.includes("The Asset") || !result.navTexts.includes("How It Works")) {
@@ -121,13 +122,13 @@ if (!result.requestVisible) {
 if (!/subject=Request%20Access/.test(result.requestHref)) {
   failures.push(`expected Request Access nav CTA to open mailto directly, got "${result.requestHref}"`);
 }
-if (!/Inter/i.test(result.bodyFont)) {
-  failures.push(`expected Inter body font, got "${result.bodyFont}"`);
+if (!/Montserrat/i.test(result.bodyFont)) {
+  failures.push(`expected Montserrat body font, got "${result.bodyFont}"`);
 }
-if (!/Geist Mono/i.test(result.mono)) {
-  failures.push(`expected Geist Mono technical font, got "${result.mono}"`);
+if (!/Montserrat/i.test(result.eyebrowFont)) {
+  failures.push(`expected Montserrat eyebrow font, got "${result.eyebrowFont}"`);
 }
-if (!/@font-face[\s\S]+Inter[\s\S]+(?:assets\/fonts|\.\.\/fonts)/i.test(cssText) || !/@font-face[\s\S]+Geist Mono[\s\S]+(?:assets\/fonts|\.\.\/fonts)/i.test(cssText)) {
+if (!/@font-face[\s\S]+Montserrat[\s\S]+(?:assets\/fonts|\.\.\/fonts)/i.test(cssText) || !/@font-face[\s\S]+Geist Mono[\s\S]+(?:assets\/fonts|\.\.\/fonts)/i.test(cssText)) {
   failures.push("expected local @font-face rules under assets/fonts");
 }
 if (/fonts\.googleapis\.com|fonts\.gstatic\.com/i.test(cssText) || blockedRequests.length) {

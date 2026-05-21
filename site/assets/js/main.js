@@ -31,108 +31,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // --- Hero video playlist -----------------------------------------
-  const heroPlaylist = document.querySelector("[data-hero-video-playlist]");
-  const heroVideos = heroPlaylist ? [...heroPlaylist.querySelectorAll("[data-hero-video]")] : [];
-  if (heroPlaylist && heroVideos.length) {
+  // --- Hero video: single perfect loop, deterministic per-page start --
+  document.querySelectorAll("[data-hero-video]").forEach(video => {
+    video.muted = true;
+    video.playsInline = true;
+    video.loop = true;
+    video.classList.add("is-active");
+    video.setAttribute("aria-hidden", "false");
+    const parent = video.parentElement;
+    if (parent) parent.classList.add("video-ready");
+
     if (reduceMotion) {
-      heroVideos.forEach(video => {
-        video.pause();
-        video.classList.remove("is-active", "is-leaving");
-        video.setAttribute("aria-hidden", "true");
-      });
-    } else {
-      const configuredTransitionMs = Number.parseInt(heroPlaylist.dataset.transitionMs || "1800", 10);
-      const configuredLead = Number.parseFloat(heroPlaylist.dataset.transitionLead || "1.8");
-      const transitionMs = Number.isFinite(configuredTransitionMs) ? configuredTransitionMs : 1800;
-      const transitionLead = Number.isFinite(configuredLead) ? configuredLead : transitionMs / 1000;
-      let activeIndex = 0;
-      let transitioning = false;
-      let hasStarted = false;
-
-      const prepareVideo = video => {
-        video.muted = true;
-        video.playsInline = true;
-        video.loop = false;
-        if (video.preload !== "auto") {
-          video.preload = "auto";
-        }
-      };
-
-      const warmNext = index => {
-        const next = heroVideos[(index + 1) % heroVideos.length];
-        if (next) prepareVideo(next);
-      };
-
-      const activateVideo = async index => {
-        if (transitioning) return;
-        const previous = heroVideos[activeIndex];
-        const next = heroVideos[index];
-        if (!next) return;
-
-        transitioning = true;
-        let cleanupAfterFade = false;
-        prepareVideo(next);
-
-        try {
-          next.currentTime = 0;
-          await next.play();
-          heroPlaylist.classList.add("video-ready");
-
-          if (!hasStarted || previous === next) {
-            heroVideos.forEach((video, videoIndex) => {
-              const isCurrent = videoIndex === index;
-              video.classList.toggle("is-active", isCurrent);
-              video.classList.remove("is-leaving");
-              video.setAttribute("aria-hidden", isCurrent ? "false" : "true");
-              if (!isCurrent) video.pause();
-            });
-            activeIndex = index;
-            hasStarted = true;
-            warmNext(activeIndex);
-            return;
-          }
-
-          next.classList.add("is-active");
-          next.classList.remove("is-leaving");
-          next.setAttribute("aria-hidden", "false");
-          previous.classList.add("is-leaving");
-          previous.setAttribute("aria-hidden", "true");
-          cleanupAfterFade = true;
-
-          window.setTimeout(() => {
-            previous.pause();
-            previous.classList.remove("is-active", "is-leaving");
-            activeIndex = index;
-            transitioning = false;
-            warmNext(activeIndex);
-          }, transitionMs);
-        } catch {
-          if (!hasStarted) heroPlaylist.classList.remove("video-ready");
-        } finally {
-          if (!cleanupAfterFade) transitioning = false;
-        }
-      };
-
-      heroVideos.forEach((video, index) => {
-        prepareVideo(video);
-        video.classList.remove("is-leaving");
-        video.addEventListener("timeupdate", () => {
-          if (index !== activeIndex || transitioning || !Number.isFinite(video.duration)) return;
-          if (video.duration - video.currentTime <= transitionLead) {
-            activateVideo((activeIndex + 1) % heroVideos.length);
-          }
-        });
-        video.addEventListener("ended", () => {
-          if (index === activeIndex && !transitioning) {
-            activateVideo((activeIndex + 1) % heroVideos.length);
-          }
-        });
-      });
-
-      activateVideo(0);
+      video.pause();
+      return;
     }
-  }
+
+    const startSeconds = Number.parseFloat(video.dataset.heroStart || "0");
+    const playbackRate = Number.parseFloat(video.dataset.heroRate || "0.5");
+    const applyStart = () => {
+      if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+      const offset = Number.isFinite(startSeconds) ? startSeconds : 0;
+      try { video.currentTime = offset % video.duration; } catch (_) {}
+    };
+    if (video.readyState >= 1) applyStart();
+    else video.addEventListener("loadedmetadata", applyStart, { once: true });
+
+    if (Number.isFinite(playbackRate) && playbackRate > 0) {
+      try { video.playbackRate = playbackRate; } catch (_) {}
+    }
+
+    const playPromise = video.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(() => {});
+    }
+  });
 
   // --- Capital flow tabs -------------------------------------------
   document.querySelectorAll("[data-section='capital-flow']").forEach(section => {
@@ -192,37 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
-  }
-
-  // --- Mouse parallax on hero grid ---------------------------------
-  const heroGrid = document.querySelector(".hero__grid");
-  if (!reduceMotion && heroGrid && window.matchMedia("(min-width: 900px)").matches) {
-    window.addEventListener("mousemove", e => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 14;
-      const y = (e.clientY / window.innerHeight - 0.5) * 14;
-      heroGrid.style.transform = `translate(${x}px, ${y}px)`;
-    }, { passive: true });
-  }
-
-  // --- Sphere parallax ---------------------------------------------
-  const sphere = document.querySelector(".sphere");
-  if (!reduceMotion && sphere && window.matchMedia("(min-width: 900px)").matches) {
-    const nodes = sphere.querySelectorAll(".sphere__node");
-    const core = sphere.querySelector(".sphere__core");
-    sphere.addEventListener("mousemove", e => {
-      const rect = sphere.getBoundingClientRect();
-      const cx = (e.clientX - rect.left) / rect.width - 0.5;
-      const cy = (e.clientY - rect.top) / rect.height - 0.5;
-      nodes.forEach((n, i) => {
-        const factor = 8 + (i * 2);
-        n.style.transform = `translate(calc(-50% + ${cx * factor}px), calc(-50% + ${cy * factor}px))`;
-      });
-      if (core) core.style.transform = `translate(${cx * 6}px, ${cy * 6}px)`;
-    });
-    sphere.addEventListener("mouseleave", () => {
-      nodes.forEach(n => n.style.transform = "");
-      if (core) core.style.transform = "";
-    });
   }
 
   // --- Year ---------------------------------------------------------

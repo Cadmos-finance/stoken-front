@@ -25,11 +25,11 @@ await withHomepage(async ({ send }) => {
     if (!result.metricsText.includes(metric)) failures.push(`expected metrics strip to include ${metric}`);
   }
   if (!/qualified institutional investors/i.test(result.ctaText)) failures.push("expected final CTA to retain qualified institutional investor framing");
-  if (!result.ctaLinks.some(link => link.text.includes("Request Access") && link.href?.startsWith("mailto:info@stoken.finance"))) {
-    failures.push(`expected final Request Access mailto CTA to info@stoken.finance, got ${JSON.stringify(result.ctaLinks)}`);
+  if (!result.ctaLinks.some(link => /Request access/i.test(link.text) && link.href?.startsWith("mailto:info@stoken.finance"))) {
+    failures.push(`expected final Request access mailto CTA to info@stoken.finance, got ${JSON.stringify(result.ctaLinks)}`);
   }
-  if (!result.ctaLinks.some(link => link.text.includes("Talk to the team") && link.href?.startsWith("mailto:info@stoken.finance"))) {
-    failures.push(`expected Talk to the team mailto CTA to info@stoken.finance, got ${JSON.stringify(result.ctaLinks)}`);
+  if (!result.ctaLinks.some(link => link.text.includes("Bring a Facility") && link.href === "for-issuers.html")) {
+    failures.push(`expected Bring a Facility secondary CTA (per graphical chart), got ${JSON.stringify(result.ctaLinks)}`);
   }
 
   if (failures.length) {

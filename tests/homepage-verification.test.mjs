@@ -33,7 +33,7 @@ await withHomepage(async ({ send }) => {
       expanded: burger?.getAttribute("aria-expanded"),
       menuOpen: document.querySelector(".nav")?.classList.contains("open"),
       mobileLaunch: [...(mobileMenu?.querySelectorAll("a") || [])].some(a => a.textContent.includes("Launch Platform")),
-      titleVisible: visibleText(document.querySelector(".hero__title"))
+      titleVisible: visibleText(document.querySelector(".hero-headline__title"))
     };
   })()`);
 
@@ -50,8 +50,8 @@ await withHomepage(async ({ send }) => {
       const style = getComputedStyle(el);
       return style.opacity === "0" || !isIdentityTransform(style.transform);
     }).length;
-    const heroGridTransform = getComputedStyle(document.querySelector(".hero__grid")).transform;
-    return { revealCount: reveals.length, hiddenReveals, heroGridTransform };
+    const heroVideo = document.querySelector(".hero__video, .page-head__video");
+    return { revealCount: reveals.length, hiddenReveals, heroVideoPaused: heroVideo ? heroVideo.paused : null };
   })()`);
 
   const failures = [];
@@ -64,8 +64,8 @@ await withHomepage(async ({ send }) => {
   if (reducedMotion.hiddenReveals !== 0) {
     failures.push(`reduced motion should reveal content immediately: ${JSON.stringify(reducedMotion)}`);
   }
-  if (reducedMotion.heroGridTransform !== "none") {
-    failures.push(`reduced motion should not apply hero parallax transform, got ${reducedMotion.heroGridTransform}`);
+  if (reducedMotion.heroVideoPaused === false) {
+    failures.push(`reduced motion should pause the looping hero video, got ${JSON.stringify(reducedMotion)}`);
   }
 
   if (failures.length) {

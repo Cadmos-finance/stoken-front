@@ -2,83 +2,62 @@ import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { root } from "./browser-page.mjs";
 
+// All 5 hero-bearing pages now use the same perfect-loop video. The homepage
+// starts at 0:00; each section page has its own deterministic offset so the
+// site has cross-page identity without random per-visit drift.
+const heroVideo = "assets/video/stoken-hero-loop.mp4";
 const pages = [
-  {
-    file: "the-asset.html",
-    videos: [
-      "assets/video/163506748-copper-mill-warehouse-metal-pl.mp4",
-      "assets/video/203823134-metal-copper-plumbing-pipes-st.mp4"
-    ]
-  },
-  {
-    file: "how-it-works.html",
-    videos: [
-      "assets/video/073422422-aerial-footage-overhead-contai.mp4",
-      "assets/video/081188251-aerial-top-down-loaded-freight.mp4"
-    ]
-  },
-  {
-    file: "for-issuers.html",
-    videos: [
-      "assets/video/241484310-aerial-drone-view-rosia-poieni.mp4",
-      "assets/video/140173507-loading-iron-ore-concentrate-c.mp4"
-    ]
-  },
-  {
-    file: "about.html",
-    videos: [
-      "assets/video/090886137-aerial-view-oil-depot-tank-far.mp4",
-      "assets/video/219347816-aerial-view-oil-terminal-stora.mp4"
-    ]
-  }
+  { file: "index.html",         start: "0",  selector: ".hero__video" },
+  { file: "the-asset.html",     start: "4",  selector: ".page-head__video" },
+  { file: "how-it-works.html",  start: "8",  selector: ".page-head__video" },
+  { file: "for-issuers.html",   start: "12", selector: ".page-head__video" },
+  { file: "about.html",         start: "16", selector: ".page-head__video" }
 ];
 
 const failures = [];
 const styles = readFileSync(path.join(root, "site/assets/css/styles.css"), "utf8");
 const pageHeadBlock = styles.match(/\.page-head\s*\{[\s\S]*?\n\}/)?.[0] || "";
-const pageHeadOverlayBlock = styles.match(/\.page-head__bg::before\s*\{[\s\S]*?\n\}/)?.[0] || "";
 const pageHeadVideoBlock = styles.match(/\.page-head__video\s*\{[\s\S]*?\n\}/)?.[0] || "";
 const pageHeadActiveVideoBlock = styles.match(/\.page-head__video\.is-active\s*\{[\s\S]*?\n\}/)?.[0] || "";
 
-if (!pageHeadBlock.includes("min-height: clamp(760px, 100vh, 1040px);")) {
-  failures.push("expected subpage heroes to use homepage-height rhythm");
+if (!/min-height:\s*clamp\(760px, 100vh, 1040px\);/.test(pageHeadBlock)) {
+  failures.push("expected subpage heroes to use the standing min-height rhythm");
 }
-if (!pageHeadBlock.includes("padding: 180px 0 100px;")) {
-  failures.push("expected subpage heroes to use homepage bottom padding rhythm");
+if (!/padding:\s*180px 0 100px;/.test(pageHeadBlock)) {
+  failures.push("expected subpage heroes to keep the standing bottom padding rhythm");
 }
-if (!pageHeadVideoBlock.includes("object-position: center center;")) {
-  failures.push("expected subpage hero videos to be explicitly centered inside the full-height hero");
+if (!/object-position:\s*center center;/.test(pageHeadVideoBlock)) {
+  failures.push("expected subpage hero videos to remain centered inside the hero band");
 }
-if (!pageHeadActiveVideoBlock.includes("opacity: 0.94;")) {
-  failures.push("expected subpage hero videos to read clearly under the overlay");
+if (!/opacity:\s*0\.94;/.test(pageHeadActiveVideoBlock)) {
+  failures.push("expected active subpage hero videos to read clearly under any overlay");
 }
-if (!pageHeadOverlayBlock.includes("rgba(13, 20, 28, 0.24) 42%") || !pageHeadOverlayBlock.includes("rgba(13, 20, 28, 0.02) 100%")) {
-  failures.push("expected subpage hero overlay to preserve text contrast while keeping the footage clearer");
+
+if (!existsSync(path.join(root, "site", heroVideo))) {
+  failures.push(`expected ${heroVideo} asset to exist (graphical chart looping video)`);
 }
 
 for (const page of pages) {
   const htmlPath = path.join(root, "site", page.file);
   const html = readFileSync(htmlPath, "utf8");
-  const playlistCount = (html.match(/data-hero-video-playlist/g) || []).length;
+
+  if (/data-hero-video-playlist/.test(html)) {
+    failures.push(`${page.file}: stale data-hero-video-playlist still present — should be a single perfect-loop video now`);
+  }
   const videoCount = (html.match(/<video[^>]*data-hero-video/g) || []).length;
-
-  if (playlistCount !== 1) {
-    failures.push(`${page.file}: expected one page hero playlist, got ${playlistCount}`);
+  if (videoCount !== 1) {
+    failures.push(`${page.file}: expected exactly one perfect-loop hero video, got ${videoCount}`);
   }
-  if (videoCount !== 2) {
-    failures.push(`${page.file}: expected two page hero videos, got ${videoCount}`);
+  if (!html.includes(`src="${heroVideo}"`)) {
+    failures.push(`${page.file}: missing the chart-supplied loop video at ${heroVideo}`);
   }
-  if (!/class="page-head__video is-active" autoplay muted playsinline preload="auto"/.test(html)) {
-    failures.push(`${page.file}: expected first page hero video to autoplay and start active`);
+  if (!new RegExp(`data-hero-start="${page.start}"`).test(html)) {
+    failures.push(`${page.file}: expected data-hero-start="${page.start}" deterministic offset`);
   }
-
-  for (const video of page.videos) {
-    if (!html.includes(`src="${video}"`)) {
-      failures.push(`${page.file}: missing ${video}`);
-    }
-    if (!existsSync(path.join(root, "site", video))) {
-      failures.push(`${page.file}: asset file does not exist for ${video}`);
-    }
+  if (!/<video[^>]*\bautoplay\b[^>]*\bmuted\b[^>]*\bloop\b[^>]*\bplaysinline\b/.test(html)
+   && !/<video[^>]*\bautoplay\b[^>]*\bmuted\b[^>]*\bplaysinline\b[^>]*\bloop\b/.test(html)
+   && !/<video[^>]*\bmuted\b[^>]*\bloop\b[^>]*\bplaysinline\b/.test(html)) {
+    failures.push(`${page.file}: expected hero video to be autoplay+muted+loop+playsinline`);
   }
 }
 

@@ -23,7 +23,61 @@
 <meta name="twitter:description" content="Rated, tokenized commodity trade finance for qualified institutional investors.">
 <meta name="twitter:image" content="https://cadmos-finance.github.io/stoken-front/assets/img/social/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/img/logos/picto-green.svg">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" href="assets/fonts/montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cadmos-finance.github.io/stoken-front/#org",
+      "name": "Stoken",
+      "legalName": "Stoken S.A.",
+      "url": "https://cadmos-finance.github.io/stoken-front/index.html",
+      "logo": "https://cadmos-finance.github.io/stoken-front/assets/img/logos/stoken-green.svg",
+      "email": "info@stoken.finance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Geneva",
+        "addressCountry": "CH"
+      },
+      "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cadmos-finance.github.io/stoken-front/the-asset.html#webpage",
+      "url": "https://cadmos-finance.github.io/stoken-front/the-asset.html",
+      "name": "The Asset — Stoken",
+      "description": "Stoken opens rated, tokenized commodity trade finance to qualified institutional investors through Swiss-law ledger-based securities.",
+      "isPartOf": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      },
+      "publisher": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cadmos-finance.github.io/stoken-front/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "The Asset",
+          "item": "https://cadmos-finance.github.io/stoken-front/the-asset.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -58,7 +112,7 @@
 <!-- PAGE HEADER -->
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="4" aria-hidden="true">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="4" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -89,7 +143,7 @@
         </div>
       </div>
       <figure class="v2-credit-graphic">
-        <img src="assets/img/sections/v2/asset-credit-market.svg" alt="" aria-hidden="true">
+        <img src="assets/img/sections/v2/asset-credit-market.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" width="560" height="533">
         <div class="v2-credit-node v2-credit-node--producer">
           <strong>Producer</strong>
           <span>Mines, farms, refineries<br>originate physical<br>commodities.</span>
@@ -119,7 +173,7 @@
     </div>
 
     <div class="v2-table-shell reveal">
-      <img src="assets/img/sections/v2/asset-terms-table.svg" alt="" aria-hidden="true">
+      <img src="assets/img/sections/v2/asset-terms-table.webp" alt="" aria-hidden="true" loading="lazy" decoding="async" width="1116" height="380">
       <div class="v2-table-topline">
         <span>Stoken &mdash; Facility Specimen</span>
         <span>0xST.0001 · ERC-20 · Ethereum</span>

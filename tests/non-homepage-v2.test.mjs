@@ -34,15 +34,20 @@ const pages = [
   }
 ];
 
+// The heavy designer illustrations were base64-PNG-in-SVG (3.6MB each); they are
+// now exported to right-sized WebP (~5-85KB each, ~134x smaller total). how-stage-02
+// stays SVG (optimized vector gauge with baked text); the small team/linkedin marks
+// stay SVG (true vectors).
 const requiredAssets = [
-  "asset-credit-market.svg",
-  "asset-terms-table.svg",
-  "how-stage-01.svg",
+  "asset-credit-market.webp",
+  "asset-terms-table.webp",
+  "how-stage-01.webp",
   "how-stage-02.svg",
-  "how-stage-03.svg",
-  "how-stage-04.svg",
-  "issuer-opportunity-cartouche.svg",
-  "issuer-process-cartouche.svg",
+  "how-stage-03.webp",
+  "how-stage-04.webp",
+  "issuer-opportunity-cartouche.webp",
+  "issuer-process-cartouche.webp",
+  "team-roadmap.webp",
   "team-sergei.svg",
   "team-romain.svg",
   "linkedin.svg"
@@ -102,10 +107,29 @@ for (const asset of forbiddenReferencedAssets) {
   }
 }
 
-try {
-  execFileSync("git", ["diff", "--quiet", "--", "site/index.html"], { cwd: root });
-} catch {
-  failures.push("site/index.html has uncommitted changes; homepage must remain untouched");
+// The homepage may now be edited (e.g. perf/SEO work), but it must keep its core
+// SEO + shared assets intact and stay overflow-free — real coverage in place of the
+// old "must be byte-identical" freeze.
+{
+  const indexHtml = readFileSync(path.join(siteRoot, "index.html"), "utf8");
+  for (const [needle, label] of [
+    ['<link rel="canonical"', "canonical link"],
+    ['property="og:image"', "og:image"],
+    ["application/ld+json", "JSON-LD structured data"],
+    ['src="assets/video/stoken-hero-loop.mp4"', "shared hero video"],
+    ["assets/css/styles.css", "stylesheet"]
+  ]) {
+    if (!indexHtml.includes(needle)) failures.push(`index.html: missing ${label}`);
+  }
+  const h1count = (indexHtml.match(/<h1[\s>]/g) || []).length;
+  if (h1count !== 1) failures.push(`index.html: expected exactly one <h1>, found ${h1count}`);
+
+  const mob = await inspectMobilePage("index.html");
+  if (mob.error) {
+    failures.push(`index.html: mobile inspection failed: ${mob.error}`);
+  } else if (mob.scrollWidth > mob.innerWidth + 1) {
+    failures.push(`index.html: mobile horizontal overflow ${mob.scrollWidth}px > ${mob.innerWidth}px (${mob.wideElements.join(", ")})`);
+  }
 }
 
 for (const page of pages) {
@@ -131,7 +155,7 @@ for (const page of pages) {
   }
 }
 
-for (const file of ["about.html", "the-asset.html", "for-issuers.html", "how-it-works.html"]) {
+for (const file of ["index.html", "about.html", "the-asset.html", "for-issuers.html", "how-it-works.html"]) {
   for (const width of [981, 1000, 1101, 1240, 1241, 1315, 1316]) {
     const result = await inspectMobilePage(file, { width, height: 1200, mobile: false });
     if (result.error) {

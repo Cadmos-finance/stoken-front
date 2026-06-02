@@ -23,7 +23,61 @@
 <meta name="twitter:description" content="An on-chain capital channel for commodity producers and traders. Confidential. Swiss law.">
 <meta name="twitter:image" content="https://cadmos-finance.github.io/stoken-front/assets/img/social/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/img/logos/picto-green.svg">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" href="assets/fonts/montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cadmos-finance.github.io/stoken-front/#org",
+      "name": "Stoken",
+      "legalName": "Stoken S.A.",
+      "url": "https://cadmos-finance.github.io/stoken-front/index.html",
+      "logo": "https://cadmos-finance.github.io/stoken-front/assets/img/logos/stoken-green.svg",
+      "email": "info@stoken.finance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Geneva",
+        "addressCountry": "CH"
+      },
+      "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cadmos-finance.github.io/stoken-front/for-issuers.html#webpage",
+      "url": "https://cadmos-finance.github.io/stoken-front/for-issuers.html",
+      "name": "For Issuers — Stoken",
+      "description": "Stoken gives commodity producers and traders an on-chain capital channel for rated Swiss-law trade finance facilities.",
+      "isPartOf": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      },
+      "publisher": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cadmos-finance.github.io/stoken-front/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "For Issuers",
+          "item": "https://cadmos-finance.github.io/stoken-front/for-issuers.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -57,7 +111,7 @@
 
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="12" aria-hidden="true">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="12" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -139,7 +193,7 @@
       </div>
       <div class="timeline-step">
         <div class="timeline-step__badge">Parallel</div>
-        <h4>Standard-<br>ised Docs</h4>
+        <h4>Standard-<br>ised&nbsp;Docs</h4>
         <p>Stoken provides standardised documentation for the issuance under Swiss law.</p>
       </div>
       <div class="timeline-step timeline-step--final">

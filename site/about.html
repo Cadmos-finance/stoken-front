@@ -23,7 +23,61 @@
 <meta name="twitter:description" content="Stoken S.A. bridges commodity trade finance and institutional on-chain capital from Geneva.">
 <meta name="twitter:image" content="https://cadmos-finance.github.io/stoken-front/assets/img/social/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/img/logos/picto-green.svg">
-<link rel="stylesheet" href="assets/css/styles.css">
+<link rel="preload" href="assets/fonts/montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/fonts/montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="assets/css/styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cadmos-finance.github.io/stoken-front/#org",
+      "name": "Stoken",
+      "legalName": "Stoken S.A.",
+      "url": "https://cadmos-finance.github.io/stoken-front/index.html",
+      "logo": "https://cadmos-finance.github.io/stoken-front/assets/img/logos/stoken-green.svg",
+      "email": "info@stoken.finance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Geneva",
+        "addressCountry": "CH"
+      },
+      "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://cadmos-finance.github.io/stoken-front/about.html#webpage",
+      "url": "https://cadmos-finance.github.io/stoken-front/about.html",
+      "name": "About — Stoken",
+      "description": "Learn about Stoken S.A. in Geneva, its mission, team, roadmap and role connecting commodity trade finance with institutional on-chain capital.",
+      "isPartOf": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      },
+      "publisher": {
+        "@id": "https://cadmos-finance.github.io/stoken-front/#org"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://cadmos-finance.github.io/stoken-front/index.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About",
+          "item": "https://cadmos-finance.github.io/stoken-front/about.html"
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -57,7 +111,7 @@
 
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="16" aria-hidden="true">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="16" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -137,7 +191,7 @@
     </div>
 
     <figure class="v2-roadmap-graphic reveal">
-      <img src="assets/img/sections/v2/team-roadmap.svg" alt="Stoken roadmap: Legal documentation in progress (Schellenberg &amp; Wittmer); Moody's overlay development in progress; Stoken platform development by Cadmos, in progress June 2026; Stoken platform live July 2026; first issuance live August 2026.">
+      <img src="assets/img/sections/v2/team-roadmap.webp" alt="Stoken roadmap: Legal documentation in progress (Schellenberg &amp; Wittmer); Moody's overlay development in progress; Stoken platform development by Cadmos, in progress June 2026; Stoken platform live July 2026; first issuance live August 2026." loading="lazy" decoding="async" width="1160" height="646">
       <ol class="v2-roadmap-items">
         <li class="v2-roadmap-item v2-roadmap-item--legal">
           <span class="v2-roadmap-node" aria-hidden="true"></span>

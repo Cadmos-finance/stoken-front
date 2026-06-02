@@ -9,63 +9,63 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Light.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Light.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 300;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-LightItalic.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-LightItalic.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Regular.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Regular.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Italic.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Italic.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Medium.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Medium.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-SemiBold.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-SemiBold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Bold.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Bold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-ExtraBold.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-ExtraBold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url("../fonts/montserrat/Montserrat-Black.ttf") format("truetype");
+  src: url("../fonts/montserrat/Montserrat-Black.woff2") format("woff2");
 }
 
 @font-face {
@@ -128,7 +128,7 @@ body {
   overflow-x: hidden;
 }
 
-img, svg, video { display: block; max-width: 100%; }
+img, svg, video { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; background: none; border: 0; color: inherit; cursor: pointer; }
 ul { list-style: none; }
@@ -1581,6 +1581,9 @@ ul { list-style: none; }
 @media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } }
 .footer__brand > a {
   display: inline-flex;
+  /* the wordmark SVG has ~11.5px of internal left whitespace; pull it back so the
+     visible logo aligns with the tagline (and the other footer columns) left edge */
+  margin-left: -11.5px;
   margin-bottom: 18px;
 }
 .footer__brand img { width: 110px; }
@@ -3003,7 +3006,7 @@ ul { list-style: none; }
   min-height: 128px;
   padding: 22px 22px 18px;
   background:
-    url("../img/sections/v2/issuer-opportunity-cartouche.svg") center / cover no-repeat,
+    url("../img/sections/v2/issuer-opportunity-cartouche.webp") center / cover no-repeat,
     var(--cream);
   color: var(--ink);
 }
@@ -3068,7 +3071,7 @@ ul { list-style: none; }
   z-index: -1;
   border-radius: 16px;
   background:
-    url("../img/sections/v2/issuer-process-cartouche.svg") center / cover no-repeat,
+    url("../img/sections/v2/issuer-process-cartouche.webp") center / cover no-repeat,
     var(--ink);
   opacity: 0;
   transition: opacity 0.25s ease;
@@ -3726,7 +3729,8 @@ ul { list-style: none; }
     margin-bottom: 44px;
   }
   .v2-issuer-opportunity .v2-heading-grid > div:last-child {
-    padding-top: 178px;
+    /* align the right paragraph's top with the left lede (tracks the scaling h2) */
+    padding-top: clamp(162px, 11.9vw, 173px);
     transform: translateX(-164px);
   }
   .v2-issuer-opportunity .v2-heading-grid > div:first-child p {
@@ -3896,7 +3900,8 @@ ul { list-style: none; }
     transform: translate(-30px, -20px);
   }
   .v2-issuer-opportunity .v2-heading-grid > div:last-child {
-    padding-top: 150px;
+    /* align the right paragraph's top with the left lede (tracks the scaling h2) */
+    padding-top: clamp(147px, 12.4vw, 160px);
     transform: translateX(-112px);
   }
   .v2-issuer-stats {

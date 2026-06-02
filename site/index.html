@@ -23,22 +23,37 @@
 <meta name="twitter:description" content="Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law.">
 <meta name="twitter:image" content="https://cadmos-finance.github.io/stoken-front/assets/img/social/og-cover.jpg">
 <link rel="icon" type="image/svg+xml" href="assets/img/logos/picto-green.svg">
+<link rel="preload" href="assets/fonts/montserrat/Montserrat-ExtraBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/styles.css?v=partner-logos">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Stoken",
-  "legalName": "Stoken S.A.",
-  "url": "https://cadmos-finance.github.io/stoken-front/index.html",
-  "logo": "https://cadmos-finance.github.io/stoken-front/assets/img/logos/stoken-green.svg",
-  "email": "info@stoken.finance",
-  "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Geneva",
-    "addressCountry": "CH"
-  },
-  "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cadmos-finance.github.io/stoken-front/#org",
+      "name": "Stoken",
+      "legalName": "Stoken S.A.",
+      "url": "https://cadmos-finance.github.io/stoken-front/index.html",
+      "logo": "https://cadmos-finance.github.io/stoken-front/assets/img/logos/stoken-green.svg",
+      "email": "info@stoken.finance",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Geneva",
+        "addressCountry": "CH"
+      },
+      "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://cadmos-finance.github.io/stoken-front/#website",
+      "url": "https://cadmos-finance.github.io/stoken-front/index.html",
+      "name": "Stoken",
+      "publisher": { "@id": "https://cadmos-finance.github.io/stoken-front/#org" },
+      "description": "Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law."
+    }
+  ]
 }
 </script>
 </head>
@@ -135,7 +150,7 @@
 <header class="hero">
   <div class="hero__bg">
     <img src="assets/img/backgrounds/bg-cover.jpg" alt="" class="hero__media hero__poster">
-    <video class="hero__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="0" aria-hidden="false">
+    <video class="hero__video is-active" autoplay muted loop playsinline preload="metadata" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="0" aria-hidden="false">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>

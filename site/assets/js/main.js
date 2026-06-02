@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const startSeconds = Number.parseFloat(video.dataset.heroStart || "0");
-    const playbackRate = Number.parseFloat(video.dataset.heroRate || "0.5");
+    const playbackRate = Number.parseFloat(video.dataset.heroRate || "1");
     const applyStart = () => {
       if (!Number.isFinite(video.duration) || video.duration <= 0) return;
       const offset = Number.isFinite(startSeconds) ? startSeconds : 0;

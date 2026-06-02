@@ -5,12 +5,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- Nav scrolled state ------------------------------------------
   const nav = document.querySelector(".nav");
-  const onScroll = () => {
-    if (window.scrollY > 30) nav.classList.add("scrolled");
+  // Hero/page-head dark-fade element: opacity ramps 0 -> 1 as the hero scrolls
+  // out, dissolving the video into the dark section below (smooth transition).
+  const heroEl = document.querySelector(".hero, .page-head");
+  let scrollTicking = false;
+  const updateScroll = () => {
+    scrollTicking = false;
+    const y = window.scrollY;
+    if (y > 30) nav.classList.add("scrolled");
     else nav.classList.remove("scrolled");
+    if (heroEl) {
+      const h = heroEl.offsetHeight || 1;
+      const fade = Math.min(1, Math.max(0, y / (h * 0.85)));
+      heroEl.style.setProperty("--hero-fade", fade.toFixed(3));
+    }
+  };
+  const onScroll = () => {
+    if (!scrollTicking) { scrollTicking = true; requestAnimationFrame(updateScroll); }
   };
   window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  updateScroll();
 
   // --- Mobile menu --------------------------------------------------
   const burger = document.querySelector(".nav__burger");

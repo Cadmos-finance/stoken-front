@@ -1169,6 +1169,24 @@ ul { list-style: none; }
   opacity: 1;
 }
 
+/* Scroll-linked fade: dissolves the hero/page-head video into the dark
+   (--ink) section below as you scroll, so the first section no longer cuts in
+   abruptly. Opacity is driven by --hero-fade, set on scroll in main.js. */
+.hero-fade {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  /* Fade into the SAME dark backdrop the first section below uses
+     (cover-chapitre.jpg under a dark gradient — see .hero-headline / .section--ink),
+     so the video dissolves into a continuation of that image, not flat black. */
+  background:
+    linear-gradient(180deg, rgba(13, 20, 28, 0.6), rgba(13, 20, 28, 0.72)),
+    url("../img/backgrounds/cover-chapitre.jpg") center / cover no-repeat,
+    var(--ink);
+  opacity: var(--hero-fade, 0);
+  pointer-events: none;
+}
+
 /* --- Hero headline (below video) --------------------------------- */
 .hero-headline {
   background:

@@ -58,7 +58,7 @@
 <!-- PAGE HEADER -->
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="4" aria-hidden="false">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="4" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -70,145 +70,97 @@
 </header>
 
 <!-- 2.1 What Are Stokens -->
-<section class="section section--ink" id="what-are-stokens">
+<section class="section section--ink v2-section v2-asset-credit" id="what-are-stokens">
   <div class="wrap">
-    <div class="grid-2 reveal" style="align-items: start;">
-      <div>
+    <div class="v2-credit-grid reveal">
+      <div class="v2-copy">
         <div class="eyebrow">What are stokens</div>
-        <h2 class="display-2" style="margin-top: 18px;">The credit market behind the real economy &mdash; tokenized.</h2>
-      </div>
-      <div>
-        <p class="lede">Commodity trade finance funds the movement of physical goods: oil, grain, metals, between producers and buyers. These are short-term loans backed by real trade flows. Stoken tokenizes these facilities as rated debt instruments on Ethereum, giving on-chain investors direct access to an asset class that has historically been the exclusive domain of trade finance banks.</p>
-      </div>
-    </div>
-
-    <!-- TRADE FLOW DIAGRAM -->
-    <div class="trade-flow reveal" style="margin-top: 80px;">
-      <div class="trade-flow__grid">
-        <div class="trade-node">
-          <div class="trade-node__icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 24V12l12-6 12 6v12"/>
-              <path d="M4 24h24M10 24v-8h12v8"/>
-            </svg>
-          </div>
-          <h4>Producer</h4>
-          <p class="trade-node__desc">Mines, farms, refineries originate physical commodities.</p>
+        <h2 class="display-2">The credit market behind the real<br>economy - tokenized</h2>
+        <div class="v2-copy-stack">
+          <p>Commodity trade finance funds the movement of physical goods: oil, grain, metals, between producers and buyers.</p>
+          <p>These are short-term loans backed by real trade flows. Stoken tokenizes these facilities as rated debt instruments on Ethereum, giving on-chain investors direct access to an asset class that has historically been the exclusive domain of trade finance banks.</p>
         </div>
-
-        <div class="trade-node">
-          <div class="trade-node__icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="4" y="10" width="24" height="14" rx="2"/>
-              <path d="M4 14h24M12 4h8v6h-8z"/>
-            </svg>
-          </div>
-          <h4>Trader</h4>
-          <p class="trade-node__desc">Moves physical goods between markets. Funded by Stoken.</p>
-        </div>
-
-        <div class="trade-node">
-          <div class="trade-node__icon">
-            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 28h24M6 28V12l10-6 10 6v16"/>
-              <rect x="13" y="18" width="6" height="10"/>
-            </svg>
-          </div>
-          <h4>End Buyer</h4>
-          <p class="trade-node__desc">Industrial consumer or processor receives the goods.</p>
-        </div>
-      </div>
-
-      <!-- Stoken layer -->
-      <div class="trade-flow__stoken">
-        <div class="trade-flow__stoken-label">
-          <img src="assets/img/logos/picto-green.svg" alt="">
-          <div class="trade-flow__stoken-text">
+        <div class="v2-cartouche v2-cartouche-panel">
+          <div class="v2-cartouche-copy">
             <strong>Stoken provides the working-capital facility</strong>
-            <span>RATED · TOKENIZED · ERC-20 ON ETHEREUM</span>
+            <span>Rated · Tokenized · ERC-20 on Ethereum</span>
+            <span>USDC · USDT · 5&ndash;12% Yield</span>
           </div>
         </div>
-        <div class="mono" style="color: var(--light-green); font-size: 0.85rem; letter-spacing: 0;">USDC · USDT · 5&ndash;12% YIELD</div>
       </div>
+      <figure class="v2-credit-graphic">
+        <img src="assets/img/sections/v2/asset-credit-market.svg" alt="" aria-hidden="true">
+        <div class="v2-credit-node v2-credit-node--producer">
+          <strong>Producer</strong>
+          <span>Mines, farms, refineries<br>originate physical<br>commodities.</span>
+        </div>
+        <div class="v2-credit-node v2-credit-node--trader">
+          <strong>Trader</strong>
+          <span>Moves physical goods<br>between markets.<br>Funded by Stoken</span>
+        </div>
+        <div class="v2-credit-node v2-credit-node--buyer">
+          <strong>End Buyer</strong>
+          <span>Industrial consumer<br>or processor receives<br>the goods.</span>
+        </div>
+      </figure>
     </div>
   </div>
 </section>
 
 <!-- 2.2 THE TERMS — Specimen card -->
-<section class="section section--green" id="terms">
+<section class="section section--green v2-section v2-terms" id="terms">
   <div class="wrap">
-    <div style="display:flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 40px;" class="reveal">
-      <div style="max-width: 600px;">
+    <div class="v2-heading-grid reveal">
+      <div>
         <div class="eyebrow">The terms</div>
-        <h2 class="display-2" style="margin-top: 18px;">A specimen Stoken.<br><span class="italic" style="color: var(--light-green);">Six data points.</span></h2>
+        <h2 class="display-2">A specimen Stoken<br><span class="italic">Six data points</span></h2>
       </div>
-      <p class="lede" style="max-width: 420px;">Every Stoken represents a single facility with its own credit rating, yield and maturity. The key terms, on the wrapper.</p>
+      <p class="lede">Every Stoken represents a single facility with its own credit rating, yield and maturity. The key terms, on the wrapper.</p>
     </div>
 
-    <div class="specimen reveal">
-      <div class="specimen__head">
-        <span class="specimen__title">Stoken &mdash; Facility Specimen</span>
-        <span class="specimen__id">0xST.0001 · ERC-20 · Ethereum</span>
+    <div class="v2-table-shell reveal">
+      <img src="assets/img/sections/v2/asset-terms-table.svg" alt="" aria-hidden="true">
+      <div class="v2-table-topline">
+        <span>Stoken &mdash; Facility Specimen</span>
+        <span>0xST.0001 · ERC-20 · Ethereum</span>
       </div>
-      <div class="specimen__grid">
-        <div class="specimen__cell">
-          <div class="specimen__label">Yield (indicative)</div>
-          <div class="specimen__value">5&ndash;12<span class="unit">%</span></div>
-        </div>
-        <div class="specimen__cell">
-          <div class="specimen__label">Tenor</div>
-          <div class="specimen__value">≤ 360<span class="unit">days</span></div>
-        </div>
-        <div class="specimen__cell">
-          <div class="specimen__label">Rating</div>
-          <div class="specimen__value">BB-<span class="unit"> / BBB+</span></div>
-        </div>
-        <div class="specimen__cell">
-          <div class="specimen__label">Structure</div>
-          <div class="specimen__value">Unsecured</div>
-        </div>
-        <div class="specimen__cell">
-          <div class="specimen__label">Minimum ticket</div>
-          <div class="specimen__value">$500,000</div>
-        </div>
-        <div class="specimen__cell">
-          <div class="specimen__label">Currency</div>
-          <div class="specimen__value">USDC<span class="unit"> / USDT</span></div>
-        </div>
-      </div>
+      <table class="v2-terms-table" aria-label="Stoken facility specimen terms">
+        <tbody>
+          <tr>
+            <td><span>Yield (indicative)</span><strong>5-12 %</strong></td>
+            <td><span>Tenor</span><strong>&le; 360 days</strong></td>
+            <td><span>Rating</span><strong>BBB+</strong></td>
+          </tr>
+          <tr>
+            <td><span>Currency</span><strong>USDC&nbsp;/&nbsp;USDT</strong></td>
+            <td><span>Minimum ticket</span><strong>$500,000</strong></td>
+            <td><span>Structure</span><strong>Unsecured</strong></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
 <!-- 2.3 GETTING STARTED -->
-<section class="section section--cream" id="getting-started">
+<section class="section section--cream v2-section v2-getting-started" id="getting-started">
   <div class="wrap">
-    <div class="grid-2 reveal" style="align-items: end;">
+    <div class="v2-heading-grid reveal">
       <div>
         <div class="eyebrow">Getting started</div>
-        <h2 class="display-2" style="margin-top: 18px;">Five steps from request <span class="italic" style="color: var(--green);">to capital deployed.</span></h2>
+        <h2 class="display-2">A specimen Stoken<br><span class="italic">to capital deployed</span></h2>
       </div>
       <p class="lede">Stoken is open to qualified institutional investors. Verification is handled entirely in-house. Once approved, your wallet is whitelisted and you gain full access to available facilities.</p>
     </div>
 
-    <div class="steps reveal" style="margin-top: 60px; --line: rgba(25,37,44,0.14);">
-      <style>
-        .section--cream .step { border-color: var(--cream-line); }
-        .section--cream .step__num { color: var(--green); }
-        .section--cream .step__desc { color: var(--cream-mute); }
-      </style>
-      <div class="step"><div class="step__num">STEP 01</div><div class="step__title">Request Access</div><p class="step__desc">Submit your institutional details on stoken.finance.</p></div>
-      <div class="step"><div class="step__num">STEP 02</div><div class="step__title">KYC / KYB Verification</div><p class="step__desc">In-house review. No third-party providers.</p></div>
-      <div class="step"><div class="step__num">STEP 03</div><div class="step__title">Wallet Whitelisting</div><p class="step__desc">Address enforced at smart-contract level.</p></div>
-      <div class="step"><div class="step__num">STEP 04</div><div class="step__title">Access Facilities</div><p class="step__desc">Browse rated facilities in the marketplace.</p></div>
-      <div class="step"><div class="step__num">STEP 05</div><div class="step__title">Deploy Capital</div><p class="step__desc">Commit through Cadmos Primary Market.</p></div>
-    </div>
-
-    <div style="margin-top: 56px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap;" class="reveal">
-      <a class="btn" style="background: var(--ink); color: var(--cream);" href="index.html#request">Request Access
-        <svg class="arrow" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M8 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a class="btn btn--ghost" href="how-it-works.html">How it works</a>
+    <div class="v2-chevron-graphic reveal">
+      <ol class="v2-chevron-steps" aria-label="Investor onboarding steps">
+        <li><span>01</span><strong>Request Access</strong><p>Submit your<br>institutional<br>details on<br>stoken.finance</p></li>
+        <li><span>02</span><strong>KYC / KYB<br>Verification</strong><p>In-house review<br>No third-party<br>providers</p></li>
+        <li><span>03</span><strong>Wallet Whitelisting</strong><p>Address enforced at smart-contract level</p></li>
+        <li><span>04</span><strong>Access Facilities</strong><p>Browse rated facilities<br>in the marketplace</p></li>
+        <li><span>05</span><strong>Deploy<br>Capital</strong><p>Commit through Cadmos Primary Market</p></li>
+      </ol>
     </div>
   </div>
 </section>

@@ -57,7 +57,7 @@
 
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="16" aria-hidden="false">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="16" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -93,38 +93,33 @@
 </section>
 
 <!-- 4.2 TEAM -->
-<section class="section section--green" id="team">
+<section class="section section--green v2-section v2-team" id="team">
   <div class="wrap">
-    <div style="display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 48px;" class="reveal">
+    <div class="v2-team-head reveal">
       <div>
         <div class="eyebrow">Team</div>
-        <h2 class="display-2" style="margin-top: 18px;">Built by veterans <span class="italic" style="color: var(--green);">of commodity finance.</span></h2>
+        <h2 class="display-2">Built by veterans<br><span class="italic">of commodity finance</span></h2>
       </div>
-      <p class="lede" style="max-width: 460px;">25+ years across JPMorgan, Credit Suisse and BNP Paribas. Operating from Geneva, the centre of global commodity trading.</p>
     </div>
 
-    <div class="team-grid">
-      <article class="member reveal">
-        <div class="member__photo"><img src="assets/img/team/sergei.jpg" alt="Sergei Mikhalev"></div>
-        <div class="member__body">
-          <div class="member__name">Sergei Mikhalev</div>
-          <div class="member__title">Founder &amp; CEO</div>
-          <a class="member__link" href="https://www.linkedin.com/search/results/people/?keywords=Sergei%20Mikhalev" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13 0H3a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V3a3 3 0 00-3-3zM5 13H2.5V6H5v7zM3.7 4.9a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8zM14 13h-2.5V9c0-1.3-1-1.5-1.5-1.5-.5 0-1.5.3-1.5 1.5v4H6V6h2.5v1c.3-.5 1-1.2 2.3-1.2 1.5 0 3.2.9 3.2 3.5V13z"/></svg>
-            LinkedIn
-          </a>
+    <div class="v2-team-grid">
+      <article class="v2-team-member reveal">
+        <img class="v2-team-member__portrait" src="assets/img/team/sergei.jpg" alt="" aria-hidden="true" data-designer-source="assets/img/sections/v2/team-sergei.svg">
+        <div class="v2-team-member__body">
+          <h3>Sergei Mikhalev</h3>
+          <p class="v2-team-member__role">Founder &amp; CEO</p>
+          <p><strong>25+ years commodity finance.</strong><br>JPMorgan, Credit Suisse,<br>BNP Paribas, Amsterdam Trade<br>Bank.</p>
+          <a class="v2-linkedin" href="https://www.linkedin.com/search/results/people/?keywords=Sergei%20Mikhalev" target="_blank" rel="noopener"><img src="assets/img/sections/v2/linkedin.svg" alt="">LinkedIn</a>
         </div>
       </article>
 
-      <article class="member reveal">
-        <div class="member__photo"><img src="assets/img/team/romain.jpg" alt="Romain Braud"></div>
-        <div class="member__body">
-          <div class="member__name">Romain Braud</div>
-          <div class="member__title">Founder &amp; Non-Executive Advisor</div>
-          <a class="member__link" href="https://www.linkedin.com/in/romainbraud/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 16 16" fill="currentColor"><path d="M13 0H3a3 3 0 00-3 3v10a3 3 0 003 3h10a3 3 0 003-3V3a3 3 0 00-3-3zM5 13H2.5V6H5v7zM3.7 4.9a1.4 1.4 0 110-2.8 1.4 1.4 0 010 2.8zM14 13h-2.5V9c0-1.3-1-1.5-1.5-1.5-.5 0-1.5.3-1.5 1.5v4H6V6h2.5v1c.3-.5 1-1.2 2.3-1.2 1.5 0 3.2.9 3.2 3.5V13z"/></svg>
-            LinkedIn
-          </a>
+      <article class="v2-team-member reveal">
+        <img class="v2-team-member__portrait" src="assets/img/team/romain.jpg" alt="" aria-hidden="true" data-designer-source="assets/img/sections/v2/team-romain.svg">
+        <div class="v2-team-member__body">
+          <h3>Romain Braud</h3>
+          <p class="v2-team-member__role">Founder,<br>Non-Executive Advisor</p>
+          <p><strong>Co-founder Bity.</strong> WEF digital<br>assets regulatory commission<br>expert.</p>
+          <a class="v2-linkedin" href="https://www.linkedin.com/in/romainbraud/" target="_blank" rel="noopener"><img src="assets/img/sections/v2/linkedin.svg" alt="">LinkedIn</a>
         </div>
       </article>
     </div>
@@ -132,43 +127,55 @@
 </section>
 
 <!-- 4.3 ROADMAP -->
-<section class="section section--cream" id="roadmap">
+<section class="section section--ink v2-section v2-roadmap" id="roadmap">
   <div class="wrap">
-    <div style="display: flex; align-items: end; justify-content: space-between; flex-wrap: wrap; gap: 24px; margin-bottom: 40px;" class="reveal">
+    <div class="v2-roadmap-head reveal">
       <div>
         <div class="eyebrow">Roadmap</div>
-        <h2 class="display-2" style="margin-top: 18px;">Platform launch <span class="italic" style="color: var(--green);">Q3 2026.</span></h2>
+        <h2 class="display-2">Platform launch<br><span class="italic">Q3 2026</span></h2>
       </div>
-      <p class="lede" style="max-width: 460px;">Five milestones from legal documentation to first issuance.</p>
     </div>
 
-    <div class="roadmap reveal">
-      <div class="milestone milestone--inprogress">
-        <div class="milestone__num">M1 · 2026</div>
-        <h4>Legal Documentation</h4>
-        <div class="milestone__status">In progress</div>
-      </div>
-      <div class="milestone milestone--inprogress">
-        <div class="milestone__num">M2 · 2026</div>
-        <h4>Moody's RiskCalc</h4>
-        <div class="milestone__status">In progress</div>
-      </div>
-      <div class="milestone milestone--inprogress">
-        <div class="milestone__num">M3 · JUN 2026</div>
-        <h4>Platform by Cadmos</h4>
-        <div class="milestone__status">In progress</div>
-      </div>
-      <div class="milestone">
-        <div class="milestone__num">M4 · JUL 2026</div>
-        <h4>Stoken Platform Live</h4>
-        <div class="milestone__status">Upcoming</div>
-      </div>
-      <div class="milestone milestone--final">
-        <div class="milestone__num">M5 · AUG 2026</div>
-        <h4>First Issuance</h4>
-        <div class="milestone__status">Target</div>
-      </div>
-    </div>
+    <figure class="v2-roadmap-graphic reveal">
+      <img src="assets/img/sections/v2/team-roadmap.svg" alt="Stoken roadmap: Legal documentation in progress (Schellenberg &amp; Wittmer); Moody's overlay development in progress; Stoken platform development by Cadmos, in progress June 2026; Stoken platform live July 2026; first issuance live August 2026.">
+      <ol class="v2-roadmap-items">
+        <li class="v2-roadmap-item v2-roadmap-item--legal">
+          <span class="v2-roadmap-node" aria-hidden="true"></span>
+          <span class="v2-roadmap-copy">
+            <strong>In Progress</strong>
+            <span>Legal Documentation<br>in preparation by<br>Schellenberg &amp; Wittmer</span>
+          </span>
+        </li>
+        <li class="v2-roadmap-item v2-roadmap-item--moodys">
+          <span class="v2-roadmap-node" aria-hidden="true"></span>
+          <span class="v2-roadmap-copy">
+            <strong>In Progress</strong>
+            <span>Moody's Overlay<br>Development</span>
+          </span>
+        </li>
+        <li class="v2-roadmap-item v2-roadmap-item--platform-dev">
+          <span class="v2-roadmap-node" aria-hidden="true"></span>
+          <span class="v2-roadmap-copy">
+            <strong>In Progress<br>June 2026</strong>
+            <span>Stoken Platform<br>Development by Cadmos</span>
+          </span>
+        </li>
+        <li class="v2-roadmap-item v2-roadmap-item--platform-live">
+          <span class="v2-roadmap-node" aria-hidden="true"></span>
+          <span class="v2-roadmap-copy">
+            <strong>July 2026</strong>
+            <span>Stoken Platform<br>Live</span>
+          </span>
+        </li>
+        <li class="v2-roadmap-item v2-roadmap-item--issuance">
+          <span class="v2-roadmap-node" aria-hidden="true"></span>
+          <span class="v2-roadmap-copy">
+            <strong>August 2026</strong>
+            <span>First Issuance<br>Live</span>
+          </span>
+        </li>
+      </ol>
+    </figure>
   </div>
 </section>
 

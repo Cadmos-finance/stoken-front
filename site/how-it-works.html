@@ -57,7 +57,7 @@
 
 <header class="page-head">
   <div class="page-head__bg">
-    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="8" aria-hidden="false">
+    <video class="page-head__video is-active" autoplay muted loop playsinline preload="auto" poster="assets/img/backgrounds/bg-cover.jpg" data-hero-video data-hero-start="8" aria-hidden="true">
       <source src="assets/video/stoken-hero-loop.mp4" type="video/mp4">
     </video>
   </div>
@@ -69,79 +69,45 @@
 </header>
 
 <!-- 3.1 From Trade to Token — split scroll -->
-<section class="section section--ink" id="trade-to-token">
+<section class="section section--ink v2-section v2-how-pipeline" id="trade-to-token">
   <div class="wrap">
-    <div style="margin-bottom: 60px;" class="reveal">
-      <div class="eyebrow">From trade to token</div>
-      <h2 class="display-2" style="margin-top: 18px; max-width: 18ch;">Four-stage pipeline from <span class="italic" style="color: var(--light-green);">facility</span> to <span class="italic" style="color: var(--light-green);">distribution.</span></h2>
-    </div>
-
     <div class="split-list">
       <!-- Step 1 -->
       <div class="split reveal">
         <div>
+          <div class="v2-pipeline-head">
+            <div class="eyebrow">From trade to token</div>
+            <h2 class="display-2"><span class="v2-nowrap">Four-stage pipeline</span><br>from <span class="italic">facility</span><br>to <span class="italic">distribution</span></h2>
+          </div>
           <div class="split__num">01</div>
-          <h3>Origination.</h3>
+          <h3>Origination</h3>
           <p>Commodity trade finance is a relationship business. Access to quality issuers depends on decades of industry presence, established counterparty networks and the ability to assess credit risk that standard models do not capture.</p>
           <p>Stoken's origination team operates from Geneva, at the centre of the global commodity trading ecosystem, with direct relationships across Tier 1 trading houses and regional producers. Every facility begins with a full review of the borrower's credit history, loan book, counterparty relationships and trade flows before any external process begins.</p>
         </div>
         <div class="split__visual">
-          <svg viewBox="0 0 360 280" style="width: 100%; height: auto;">
-            <defs>
-              <linearGradient id="g1" x1="0" x2="1">
-                <stop offset="0" stop-color="#63a0ad" stop-opacity="0.9"/>
-                <stop offset="1" stop-color="#63a0ad" stop-opacity="0.15"/>
-              </linearGradient>
-            </defs>
-            <!-- Geneva HQ at center -->
-            <circle cx="180" cy="140" r="22" fill="#19252c" stroke="#63a0ad" stroke-width="1.5"/>
-            <text x="180" y="144" text-anchor="middle" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">GVA</text>
-            <!-- Outer relationship nodes -->
-            <g fill="none" stroke="url(#g1)" stroke-width="1" stroke-dasharray="3 3">
-              <line x1="180" y1="140" x2="50" y2="50"/>
-              <line x1="180" y1="140" x2="310" y2="60"/>
-              <line x1="180" y1="140" x2="320" y2="200"/>
-              <line x1="180" y1="140" x2="60" y2="220"/>
-              <line x1="180" y1="140" x2="180" y2="40"/>
-              <line x1="180" y1="140" x2="220" y2="250"/>
-            </g>
-            <g font-family="monospace" font-size="8" fill="#f9f6e6" letter-spacing="0">
-              <circle cx="50" cy="50" r="5" fill="#63a0ad"/><text x="50" y="40" text-anchor="middle">PRODUCERS</text>
-              <circle cx="310" cy="60" r="5" fill="#63a0ad"/><text x="310" y="50" text-anchor="middle">TRADERS</text>
-              <circle cx="320" cy="200" r="5" fill="#63a0ad"/><text x="320" y="218" text-anchor="middle">BANKS</text>
-              <circle cx="60" cy="220" r="5" fill="#63a0ad"/><text x="60" y="238" text-anchor="middle">REFINERIES</text>
-              <circle cx="180" cy="40" r="5" fill="#63a0ad"/><text x="180" y="28" text-anchor="middle">EXCHANGES</text>
-              <circle cx="220" cy="250" r="5" fill="#63a0ad"/><text x="220" y="268" text-anchor="middle">COUNTERPARTIES</text>
-            </g>
-          </svg>
+          <div class="v2-stage-graphic v2-stage-graphic--network">
+            <img src="assets/img/sections/v2/how-stage-01.svg" alt="" aria-hidden="true">
+            <span class="v2-stage-label v2-stage-label--center">GVA</span>
+            <span class="v2-stage-label v2-stage-label--producers">Producers</span>
+            <span class="v2-stage-label v2-stage-label--exchanges">Exchanges</span>
+            <span class="v2-stage-label v2-stage-label--traders">Traders</span>
+            <span class="v2-stage-label v2-stage-label--banks">Banks</span>
+            <span class="v2-stage-label v2-stage-label--counterparties">Counterparties</span>
+            <span class="v2-stage-label v2-stage-label--refineries">Refineries</span>
+          </div>
         </div>
       </div>
 
       <!-- Step 2 -->
       <div class="split split--reverse reveal">
         <div class="split__visual">
-          <svg viewBox="0 0 360 280" style="width: 100%; height: auto;">
-            <!-- Risk gauge -->
-            <g stroke="#63a0ad" stroke-width="1.5" fill="none">
-              <path d="M40 200 A 140 140 0 0 1 320 200" stroke-width="2"/>
-              <path d="M40 200 A 140 140 0 0 1 320 200" stroke="#63a0ad" stroke-width="14" stroke-dasharray="220 500"/>
-            </g>
-            <text x="180" y="190" text-anchor="middle" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="32">BBB+</text>
-            <text x="180" y="216" text-anchor="middle" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">DUAL LAYER RATING</text>
-            <g font-family="monospace" font-size="9" fill="#f9f6e6" opacity="0.7" letter-spacing="0">
-              <text x="40" y="222">B</text>
-              <text x="318" y="222">AAA</text>
-            </g>
-            <!-- Source tags -->
-            <g font-family="monospace" font-size="9" fill="#63a0ad" letter-spacing="0">
-              <text x="100" y="260">STOKEN SCORING</text>
-              <text x="226" y="260">MOODY'S RISKCALC</text>
-            </g>
-          </svg>
+          <div class="v2-stage-graphic v2-stage-graphic--rating">
+            <img src="assets/img/sections/v2/how-stage-02.svg" alt="Dual-layer rating gauge: facility scored BBB+ on a B-to-AAA scale, via Stoken proprietary scoring and an independent Moody's RiskCalc assessment.">
+          </div>
         </div>
         <div>
           <div class="split__num">02</div>
-          <h3>Rating.</h3>
+          <h3>Rating</h3>
           <p>The issuer selects the rating structure. Stoken proprietary scoring, an independent Moody's RiskCalc assessment, or both. Moody's RiskCalc is specifically designed for private, unrated companies, exactly the profile of commodity traders and producers.</p>
           <p>The result is a forward-looking default probability assigned per facility, giving investors a transparent and independently verified risk assessment before committing capital.</p>
         </div>
@@ -151,64 +117,42 @@
       <div class="split reveal">
         <div>
           <div class="split__num">03</div>
-          <h3>Tokenization.</h3>
+          <h3>Tokenization</h3>
           <p>Each facility is issued as an ERC-20 token on Ethereum. Each Stoken represents a single facility with its own rating, yield and maturity. Structured as a Ledger-based Security under the Swiss DLT Act, ownership transfers exclusively on-chain in accordance with Article 973e of the Swiss Code of Obligations.</p>
           <p>Every transaction is publicly verifiable on-chain. Wallet whitelisting ensures only verified investors can participate.</p>
         </div>
         <div class="split__visual">
-          <svg viewBox="0 0 360 280" style="width: 100%; height: auto;">
-            <defs>
-              <linearGradient id="g3" x2="1">
-                <stop offset="0" stop-color="#63a0ad" stop-opacity="0.4"/>
-                <stop offset="1" stop-color="#63a0ad" stop-opacity="0.05"/>
-              </linearGradient>
-            </defs>
-            <!-- Token card -->
-            <rect x="80" y="60" width="200" height="160" rx="14" fill="url(#g3)" stroke="#63a0ad" stroke-width="1.5"/>
-            <text x="100" y="92" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">FACILITY ID</text>
-            <text x="100" y="108" fill="#f9f6e6" font-family="monospace" font-size="11">0xST.0001</text>
-            <line x1="100" y1="120" x2="260" y2="120" stroke="#63a0ad" stroke-opacity="0.3"/>
-            <text x="100" y="146" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">RATING</text>
-            <text x="100" y="166" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="22">BBB+</text>
-            <text x="200" y="146" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">YIELD</text>
-            <text x="200" y="166" fill="#f9f6e6" font-family="Montserrat,sans-serif" font-weight="700" font-size="22">8.4%</text>
-            <text x="100" y="192" fill="#63a0ad" font-family="monospace" font-size="9" letter-spacing="0">MATURITY</text>
-            <text x="100" y="208" fill="#f9f6e6" font-family="monospace" font-size="11">2026-12-15</text>
-            <!-- ETH badge -->
-            <circle cx="260" cy="80" r="14" fill="#19252c" stroke="#63a0ad"/>
-            <text x="260" y="84" text-anchor="middle" fill="#f9f6e6" font-family="monospace" font-size="10">ETH</text>
-          </svg>
+          <div class="v2-stage-graphic v2-stage-graphic--card">
+            <img src="assets/img/sections/v2/how-stage-03.svg" alt="" aria-hidden="true">
+            <span class="v2-card-label v2-card-label--id">Facility ID</span>
+            <strong class="v2-card-value v2-card-value--id">0xST.0001</strong>
+            <span class="v2-card-label v2-card-label--rating">Rating</span>
+            <strong class="v2-card-value v2-card-value--rating">BBB+</strong>
+            <span class="v2-card-label v2-card-label--yield">Yield</span>
+            <strong class="v2-card-value v2-card-value--yield">8,4%</strong>
+            <span class="v2-card-label v2-card-label--maturity">Maturity</span>
+            <strong class="v2-card-value v2-card-value--maturity">2026-12-15</strong>
+          </div>
         </div>
       </div>
 
       <!-- Step 4 -->
       <div class="split split--reverse reveal">
         <div class="split__visual">
-          <svg viewBox="0 0 360 280" style="width: 100%; height: auto;">
-            <!-- Distribution network -->
-            <circle cx="180" cy="140" r="14" fill="#63a0ad" stroke="#f9f6e6" stroke-width="0.5"/>
-            <text x="180" y="170" text-anchor="middle" fill="#63a0ad" font-family="monospace" font-size="8" letter-spacing="0">STOKEN</text>
-            <g stroke="#63a0ad" stroke-width="1" stroke-opacity="0.5" stroke-dasharray="2 3">
-              <line x1="180" y1="140" x2="60" y2="60"/>
-              <line x1="180" y1="140" x2="300" y2="60"/>
-              <line x1="180" y1="140" x2="60" y2="220"/>
-              <line x1="180" y1="140" x2="300" y2="220"/>
-              <line x1="180" y1="140" x2="180" y2="40"/>
-            </g>
-            <g font-family="monospace" font-size="9" fill="#f9f6e6" letter-spacing="0">
-              <rect x="20" y="40" width="80" height="24" rx="6" fill="#19252c" stroke="#63a0ad" stroke-width="0.5"/><text x="60" y="56" text-anchor="middle">STABLECOIN</text>
-              <rect x="260" y="40" width="80" height="24" rx="6" fill="#19252c" stroke="#63a0ad" stroke-width="0.5"/><text x="300" y="56" text-anchor="middle">DAO TREASURY</text>
-              <rect x="20" y="208" width="80" height="24" rx="6" fill="#19252c" stroke="#63a0ad" stroke-width="0.5"/><text x="60" y="224" text-anchor="middle">FAMILY OFFICE</text>
-              <rect x="260" y="208" width="80" height="24" rx="6" fill="#19252c" stroke="#63a0ad" stroke-width="0.5"/><text x="300" y="224" text-anchor="middle">VAULT CURATOR</text>
-              <rect x="135" y="22" width="90" height="24" rx="6" fill="#19252c" stroke="#63a0ad" stroke-width="0.5"/><text x="180" y="38" text-anchor="middle">INSTITUTIONAL</text>
-            </g>
-          </svg>
+          <div class="v2-stage-graphic v2-stage-graphic--distribution">
+            <img src="assets/img/sections/v2/how-stage-04.svg" alt="" aria-hidden="true">
+            <span class="v2-stage-label v2-stage-label--stablecoin">Stablecoin</span>
+            <span class="v2-stage-label v2-stage-label--dao">DAO<br>Treasury</span>
+            <span class="v2-stage-label v2-stage-label--institutional">Institutional</span>
+            <span class="v2-stage-label v2-stage-label--family">Family Office</span>
+            <span class="v2-stage-label v2-stage-label--vault">Vault Curator</span>
+          </div>
         </div>
         <div>
           <div class="split__num">04</div>
-          <h3>Distribution.</h3>
+          <h3>Distribution</h3>
           <p>Placed with stablecoin issuers, DAO treasuries, vault curators, family offices and institutional investors through Stoken's network. USDC and USDT conversion supported directly on the platform.</p>
-          <p style="color: var(--cream);"><span class="mono" style="color: var(--light-green);">ROADMAP </span> Secondary market liquidity.</p>
+          <p>Allocation, conversion and settlement remain coordinated through the Cadmos primary-market platform.</p>
         </div>
       </div>
     </div>
@@ -216,29 +160,40 @@
 </section>
 
 <!-- 3.2 How the Money Moves -->
-<section class="section section--green" id="money-moves">
+<section class="section section--green v2-section v2-money-moves" id="money-moves">
   <div class="wrap">
-    <div class="grid-2 reveal" style="align-items: end; margin-bottom: 60px;">
+    <div class="v2-heading-grid reveal">
       <div>
         <div class="eyebrow">How the money moves</div>
-        <h2 class="display-2" style="margin-top: 18px;">Capital, escrowed and matched <span class="italic" style="color: var(--light-green);">by smart contract.</span></h2>
+        <h2 class="display-2">Capital, escrowed and matched<br><span class="italic">by smart contract</span></h2>
       </div>
       <div>
         <p>Capital is matched to facilities via smart contract on Ethereum. Once matched, funds are held in escrow until the facility is confirmed and release conditions are met. On confirmation, capital is deployed to the borrower.</p>
-        <p style="margin-top: 14px; color: var(--mute);">On each payment date, coupon payments are received by Stoken and distributed to all investors via smart contract. At maturity, the borrower repays the facility and principal is returned to investors on-chain.</p>
+        <p>On each payment date, coupon payments are received by Stoken and distributed to all investors via smart contract. At maturity, the borrower repays the facility and principal is returned to investors on-chain.</p>
       </div>
     </div>
 
     <div class="money-flow reveal">
+      <svg class="money-flow__bar" viewBox="0 0 1108 124" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="mfChev" x1="0" y1="0" x2="1" y2="0.5">
+            <stop offset="0" stop-color="#151e24"></stop>
+            <stop offset="1" stop-color="#0a0e10"></stop>
+          </linearGradient>
+        </defs>
+        <path d="M0 0 H221.6 L257.6 62 L221.6 124 H0 Z" fill="url(#mfChev)"></path>
+        <path d="M221.6 0 H443.2 L479.2 62 L443.2 124 H221.6 L257.6 62 Z" fill="url(#mfChev)"></path>
+        <path d="M443.2 0 H664.8 L700.8 62 L664.8 124 H443.2 L479.2 62 Z" fill="url(#mfChev)"></path>
+        <path d="M664.8 0 H886.4 L922.4 62 L886.4 124 H664.8 L700.8 62 Z" fill="url(#mfChev)"></path>
+        <path d="M886.4 0 H1108 V124 H886.4 L922.4 62 Z" fill="url(#mfChev)"></path>
+      </svg>
       <div class="money-flow__nodes">
-        <div class="flow-line"></div>
-        <div class="flow-node"><div class="flow-node__circle">01</div><div class="flow-node__label">Order Matching</div><div class="flow-node__sub">Investor &mdash; facility</div></div>
+        <div class="flow-node"><div class="flow-node__circle">01</div><div class="flow-node__label">Order matching</div><div class="flow-node__sub">Investor - facility</div></div>
         <div class="flow-node"><div class="flow-node__circle">02</div><div class="flow-node__label">Escrow</div><div class="flow-node__sub">Capital held on-chain</div></div>
-        <div class="flow-node"><div class="flow-node__circle">03</div><div class="flow-node__label">Facility Live</div><div class="flow-node__sub">Capital deployed</div></div>
+        <div class="flow-node"><div class="flow-node__circle">03</div><div class="flow-node__label">Facility live</div><div class="flow-node__sub">Capital deployed</div></div>
         <div class="flow-node"><div class="flow-node__circle">04</div><div class="flow-node__label">Coupon</div><div class="flow-node__sub">Distributed to holders</div></div>
         <div class="flow-node"><div class="flow-node__circle">05</div><div class="flow-node__label">Repayment</div><div class="flow-node__sub">Principal returned</div></div>
       </div>
-      <p style="margin-top: 56px; text-align: center; color: var(--mute); font-size: 0.92rem; max-width: 70ch; margin-left:auto; margin-right:auto;">Every transaction is publicly verifiable on the Ethereum blockchain. Wallet whitelisting is enforced at the smart contract level &mdash; not just the front-end. Built on <strong style="color: var(--cream); font-weight: 500;">Cadmos</strong>, a DLT infrastructure provider purpose-built for tokenized securities.</p>
     </div>
   </div>
 </section>

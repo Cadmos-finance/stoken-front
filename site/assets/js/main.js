@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
     video.playsInline = true;
     video.loop = true;
     video.classList.add("is-active");
-    video.setAttribute("aria-hidden", "false");
     const parent = video.parentElement;
     if (parent) parent.classList.add("video-ready");
 

@@ -11,3 +11,9 @@ site/assets/video/stoken-hero-loop-1080p.mp4
 Livraison/
 update/
 __MACOSX/
+
+# Designer source dump (~172MB) — not part of the deployed site
+Suite des elements/
+Suite des elements.zip
+# QA reference screenshots (used for design comparison, not deployed)
+specs/

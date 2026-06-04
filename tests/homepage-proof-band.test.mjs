@@ -16,6 +16,7 @@ await withHomepage(async ({ send }) => {
         href: item.getAttribute("href") || "",
         target: item.getAttribute("target") || "",
         rel: item.getAttribute("rel") || "",
+        captionLines: item.querySelector("span")?.getClientRects().length || 0,
         visible: visibleText(item),
         filter: style.filter,
         opacity: style.opacity
@@ -23,17 +24,21 @@ await withHomepage(async ({ send }) => {
     });
     const proofTop = proof?.getBoundingClientRect().top ?? 99999;
     const whatWeDoTop = document.querySelector('[data-section="platform-capabilities"]')?.getBoundingClientRect().top ?? 0;
-    return { present: !!proof, visible: visibleText(proof), items, appearsBeforeWhatWeDo: proofTop < whatWeDoTop };
+    const labelLines = [...(proof?.querySelectorAll(".proof-band__label-copy span") || [])].map(line => line.textContent.trim());
+    return { present: !!proof, visible: visibleText(proof), items, labelLines, appearsBeforeWhatWeDo: proofTop < whatWeDoTop };
   })()`);
 
   const failures = [];
   const expected = [
-    { label: "Moody's", src: "assets/img/partners/moodys.png", href: "https://www.moodys.com/" },
+    { label: "Moody's", src: "assets/img/partners/moodys.png", href: "https://www.moodys.com/web/en/us/capabilities/credit-risk.html" },
     { label: "Cadmos", src: "assets/img/partners/cadmos-gold.svg", href: "https://www.cadmos.finance/" },
     { label: "SO-FIT", src: "assets/img/partners/so-fit.svg", href: "https://so-fit.ch/" },
-    { label: "Bonnard Lawson", src: "assets/img/partners/bonnard-lawson.svg", href: "https://www.bonnard-lawson.com/" }
+    { label: "Bonnard Lawson", src: "assets/img/partners/bonnard-lawson.svg", href: "https://www.bonnard-lawson.com/expertise/technology-outsourcing/" }
   ];
   if (!result.present || !result.visible) failures.push("expected visible high-trust proof band");
+  if (JSON.stringify(result.labelLines) !== JSON.stringify(["Regulated financial intermediation,", "Integrating industry-", "leading infrastructure."])) {
+    failures.push(`expected three-line proof-band label, got ${JSON.stringify(result.labelLines)}`);
+  }
   for (const { label, src, href } of expected) {
     const item = result.items.find(entry => entry.visible && entry.label.includes(label));
     if (!item) {
@@ -48,6 +53,9 @@ await withHomepage(async ({ send }) => {
     }
     if (item.href !== href || item.target !== "_blank" || !item.rel.includes("noopener")) {
       failures.push(`expected ${label} logo to link to partner site ${href}, got ${JSON.stringify(item)}`);
+    }
+    if (label === "SO-FIT" && item.captionLines !== 1) {
+      failures.push(`expected SO-FIT caption to stay on one line, got ${JSON.stringify(item)}`);
     }
   }
   if (!result.appearsBeforeWhatWeDo) failures.push("expected proof band to appear before the What we do section");

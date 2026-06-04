@@ -9,10 +9,12 @@ await withHomepage(async ({ send }) => {
       text: item.textContent.replace(/\\s+/g, " ").trim(),
       visible: visibleText(item)
     }));
+    const textLines = [...(section?.querySelectorAll("svg text") || [])].map(item => item.textContent.replace(/\\s+/g, " ").trim()).filter(Boolean);
     return {
       present: !!section,
       visible: visibleText(section),
       platformText: section?.textContent.replace(/\\s+/g, " ").trim() || "",
+      graphicText: textLines.join(" "),
       capabilities
     };
   })()`);
@@ -30,6 +32,12 @@ await withHomepage(async ({ send }) => {
   }
   if (!/Four capabilities/i.test(result.platformText) || !/One platform/i.test(result.platformText)) {
     failures.push("expected four-capabilities one-platform framing");
+  }
+  if (!/Stoken scoring/i.test(result.platformText) || !/RiskCalc/i.test(result.platformText) || !/investor capital is committed/i.test(result.platformText)) {
+    failures.push("expected updated 02 Rating methodology copy in What we do");
+  }
+  if (!/Issuers are screened and assessed before any external rating or distribution process begins/i.test(result.graphicText)) {
+    failures.push("expected restored 01 Origination copy in What we do");
   }
 
   if (failures.length) {

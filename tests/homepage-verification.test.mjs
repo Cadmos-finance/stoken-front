@@ -4,7 +4,7 @@ await withHomepage(async ({ send }) => {
   await waitForStokenReady(send);
 
   const desktop = await evaluate(send, `(() => {
-    const required = [".hero", "[data-section='audience-routing']", "[data-section='proof-band']", "[data-section='facility-preview']", "[data-section='capital-flow']", "[data-section='platform-capabilities']", "[data-section='metrics-strip']", "#request"];
+    const required = [".hero", "[data-section='audience-routing']", "[data-section='proof-band']", "[data-section='capital-flow']", "[data-section='platform-capabilities']", "[data-section='metrics-strip']", "#request"];
     const visibleText = el => !!el && getComputedStyle(el).display !== "none" && getComputedStyle(el).visibility !== "hidden";
     return {
       overflow: document.documentElement.scrollWidth - window.innerWidth,

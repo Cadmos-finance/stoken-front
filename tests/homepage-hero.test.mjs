@@ -43,15 +43,12 @@ await withHomepage(async ({ send }) => {
   if (!result.headlineVisible) failures.push("expected visible hero headline section below the video");
   if (!/Commodity\s*finance\s*On-[cC]hain/i.test(result.title)) failures.push(`expected chart-approved headline, got "${result.title}"`);
   if (result.eyebrow) failures.push(`expected no extra proof eyebrow in the chart headline block, got "${result.eyebrow}"`);
-  if (!/rated commodity trade finance/i.test(result.sub) || !/Ethereum/i.test(result.sub) || !/Swiss law/i.test(result.sub)) {
+  if (!/Commodity trade finance facilities/i.test(result.sub) || !/tokenized on Ethereum/i.test(result.sub) || !/Credit-rated private placements governed by Swiss law/i.test(result.sub)) {
     failures.push(`expected tightened institutional hero subcopy, got "${result.sub}"`);
   }
   if (result.meta) failures.push(`expected no extra proof meta line in the chart headline block, got "${result.meta}"`);
-  if (!result.ctas.some(cta => cta.visible && /Request access/i.test(cta.text) && cta.href === "#request")) {
-    failures.push(`expected Request access hero CTA, got ${JSON.stringify(result.ctas)}`);
-  }
-  if (!result.ctas.some(cta => cta.visible && cta.text === "Bring a Facility" && cta.href === "for-issuers.html")) {
-    failures.push(`expected Bring a Facility hero CTA, got ${JSON.stringify(result.ctas)}`);
+  if (result.ctas.length) {
+    failures.push(`expected no hero CTA pair after copy simplification, got ${JSON.stringify(result.ctas)}`);
   }
   if (!result.mediaPresent || !result.mediaVisible) failures.push("expected nonblank hero media fallback");
   if (result.heroVideos.length !== 1) failures.push(`expected exactly one perfect-loop hero video, got ${JSON.stringify(result.heroVideos)}`);

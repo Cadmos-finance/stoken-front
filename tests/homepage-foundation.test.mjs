@@ -117,10 +117,10 @@ if (!result.launchVisible || result.launchText !== "Launch Platform") {
   failures.push("expected visible Launch Platform nav CTA");
 }
 if (!result.requestVisible) {
-  failures.push("expected visible Request Access nav CTA");
+  failures.push("expected visible Request access nav CTA");
 }
 if (!/subject=Request%20Access/.test(result.requestHref)) {
-  failures.push(`expected Request Access nav CTA to open mailto directly, got "${result.requestHref}"`);
+  failures.push(`expected Request access nav CTA to open mailto directly, got "${result.requestHref}"`);
 }
 if (!/Montserrat/i.test(result.bodyFont)) {
   failures.push(`expected Montserrat body font, got "${result.bodyFont}"`);

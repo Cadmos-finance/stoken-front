@@ -391,9 +391,10 @@ ul { list-style: none; }
 }
 .proof-band__inner {
   display: grid;
-  grid-template-columns: minmax(170px, 0.32fr) minmax(0, 1fr);
-  gap: clamp(20px, 4vw, 48px);
+  grid-template-columns: minmax(460px, 0.42fr) minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 40px);
   align-items: center;
+  max-width: 1440px;
   padding-block: clamp(22px, 3vw, 34px);
 }
 .proof-band__label {
@@ -407,6 +408,11 @@ ul { list-style: none; }
   align-items: center;
   gap: 16px;
 }
+.proof-band__label-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
 /* Text is black, but the dash keeps its teal/green accent (set explicitly so
    the black text colour doesn't bleed into it via currentColor). */
 .proof-band__label::before {
@@ -417,6 +423,9 @@ ul { list-style: none; }
   opacity: 0.55;
   border-radius: 2px;
   flex-shrink: 0;
+}
+.proof-band__label-line {
+  white-space: nowrap;
 }
 /* Logos merged into one connected strip per PDF — no gaps, shared dividers,
    square corners. */
@@ -480,6 +489,7 @@ ul { list-style: none; }
   letter-spacing: 0.04em;
   color: var(--cream-mute);
   text-transform: uppercase;
+  white-space: nowrap;
 }
 /* Hover: invert to white-on-black per PDF — logos become solid white via
    filter, container goes dark, label text flips to cream. */
@@ -499,7 +509,7 @@ ul { list-style: none; }
 .proof-logo:focus-visible span {
   color: rgba(249, 246, 230, 0.78);
 }
-@media (max-width: 980px) {
+@media (max-width: 1280px) {
   .proof-band__inner {
     grid-template-columns: 1fr;
   }
@@ -635,9 +645,17 @@ ul { list-style: none; }
   text-transform: uppercase;
 }
 .facility-term strong {
+  display: block;
   font-size: clamp(1.15rem, 2vw, 1.55rem);
   font-weight: 720;
   color: var(--cream);
+}
+.facility-term small {
+  display: block;
+  margin-top: 8px;
+  color: var(--mute);
+  font-size: 0.74rem;
+  line-height: 1.35;
 }
 .facility-card__footer {
   position: relative;
@@ -2458,6 +2476,19 @@ ul { list-style: none; }
   letter-spacing: 0.075em;
   text-transform: uppercase;
   white-space: nowrap;
+}
+.v2-cartouche-copy.v2-cartouche-copy--sentence {
+  top: 50%;
+  height: auto;
+  display: block;
+  transform: translateY(-50%);
+}
+.v2-cartouche-copy--sentence p {
+  max-width: 44ch;
+  color: var(--cream);
+  font-size: clamp(0.72rem, 1.05vw, 0.94rem);
+  font-weight: 700;
+  line-height: 1.25;
 }
 .v2-credit-graphic {
   position: relative;

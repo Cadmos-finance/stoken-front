@@ -8,11 +8,11 @@ const failures = [];
 
 for (const page of pages) {
   const html = readFileSync(path.join(root, "site", page), "utf8");
-  if (!html.includes(`<a class="btn btn--ghost" href="${requestAccessMailto}">Request Access</a>`)) {
-    failures.push(`${page}: expected desktop nav Request Access to open request mailto`);
+  if (!html.includes(`<a class="btn btn--ghost" href="${requestAccessMailto}">Request access</a>`)) {
+    failures.push(`${page}: expected desktop nav Request access to open request mailto`);
   }
-  if (!html.includes(`<a href="${requestAccessMailto}">Request Access</a>`)) {
-    failures.push(`${page}: expected mobile nav Request Access to open request mailto`);
+  if (!html.includes(`<a href="${requestAccessMailto}">Request access</a>`)) {
+    failures.push(`${page}: expected mobile nav Request access to open request mailto`);
   }
   if (!html.includes(`<a href="index.html" aria-label="Stoken home"><img src="assets/img/logos/stoken-cream.svg" alt="Stoken"></a>`)) {
     failures.push(`${page}: expected footer Stoken logo to link home`);

@@ -40,7 +40,6 @@ const pages = [
 // stay SVG (true vectors).
 const requiredAssets = [
   "asset-credit-market.webp",
-  "asset-terms-table.webp",
   "how-stage-01.webp",
   "how-stage-02.svg",
   "how-stage-03.webp",
@@ -84,6 +83,16 @@ for (const page of pages) {
   }
   if (!html.includes('src="assets/video/stoken-hero-loop.mp4"')) {
     failures.push(`${page.file}: expected shared subpage hero video`);
+  }
+}
+
+{
+  const assetText = readFileSync(path.join(siteRoot, "the-asset.html"), "utf8").replace(/\s+/g, " ");
+  if (!assetText.includes("Commodity trade finance funds the movement of physical goods: oil, grains, metals and critical minerals between producers and buyers.")) {
+    failures.push("the-asset.html: missing updated commodity trade finance paragraph");
+  }
+  if (!assetText.includes("Stokens are used to fund working capital needs that enable the production, transport, storage and delivery of commodities to their ultimate users.")) {
+    failures.push("the-asset.html: missing updated Stokens cartouche copy");
   }
 }
 

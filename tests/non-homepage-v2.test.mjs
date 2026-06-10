@@ -47,8 +47,8 @@ const requiredAssets = [
   "issuer-opportunity-cartouche.webp",
   "issuer-process-cartouche.webp",
   "team-roadmap.webp",
+  "team-nassib.svg",
   "team-sergei.svg",
-  "team-romain.svg",
   "linkedin.svg"
 ];
 

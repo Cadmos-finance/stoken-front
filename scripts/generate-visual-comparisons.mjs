@@ -181,10 +181,10 @@ const elements = [
     }
   },
   {
-    slug: "team-romain",
+    slug: "team-cto",
     page: "about.html",
     selector: ".v2-team-member:nth-child(2) .v2-team-member__portrait",
-    reference: "Profil Romain.svg",
+    reference: "specs/team/01-team-members.png",
     sectionCrop: {
       section: "team-section",
       crop: { x: 0.48, y: 0.36, width: 0.36, height: 0.32 }

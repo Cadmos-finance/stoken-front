@@ -1,0 +1,22 @@
+.env
+.env.*
+!.env.example
+*:Zone.Identifier
+
+site/assets/video/stoken-hero-candidate-*.mp4
+site/assets/video/stoken-hero-candidate-*.webm
+site/assets/video/stoken-hero-loop-1080p.mp4
+
+# Local working / reference material (not part of the deployed site)
+Livraison/
+update/
+__MACOSX/
+
+# Designer source dump (~172MB) — not part of the deployed site
+Suite des elements/
+Suite des elements.zip
+# QA reference screenshots (used for design comparison, not deployed)
+specs/
+
+# Private deployment correspondence
+stoken-website-deployment-email.txt

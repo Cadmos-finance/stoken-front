@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 260" role="img" aria-label="Romain Braud portrait">
+  <defs>
+    <clipPath id="hex">
+      <polygon points="130 0 242.6 65 242.6 195 130 260 17.4 195 17.4 65"/>
+    </clipPath>
+  </defs>
+  <rect width="260" height="260" fill="#0d141c" clip-path="url(#hex)"/>
+  <image href="../../team/romain.jpg" x="-20" y="-8" width="300" height="300" preserveAspectRatio="xMidYMid slice" clip-path="url(#hex)"/>
+</svg>

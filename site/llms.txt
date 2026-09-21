@@ -1,0 +1,25 @@
+# Stoken
+
+> Institutional commodity trade finance, tokenized on Ethereum and governed by Swiss law.
+
+Stoken S.A. is a Geneva-based platform connecting the commodity trade finance market with qualified institutional on-chain capital. The site explains Stokens as rated, Swiss-law ledger-based securities backed by commodity finance facilities.
+
+## Main Pages
+
+- [Homepage](https://cadmos-finance.github.io/stoken-front/index.html): Overview of Stoken, institutional proof points, platform capabilities and access routes.
+- [The Asset](https://cadmos-finance.github.io/stoken-front/the-asset.html): Stoken structure, asset terms and investor onboarding.
+- [How It Works](https://cadmos-finance.github.io/stoken-front/how-it-works.html): Origination, rating, tokenization, distribution, money movement and Swiss-law governance.
+- [For Issuers](https://cadmos-finance.github.io/stoken-front/for-issuers.html): On-chain capital channel for commodity producers and traders.
+- [About](https://cadmos-finance.github.io/stoken-front/about.html): Mission, team, roadmap and contact details.
+- [Legal](https://cadmos-finance.github.io/stoken-front/legal.html): Privacy policy, terms of use, restricted jurisdictions and regulatory disclosures.
+
+## Contact
+
+- General contact: info@stoken.finance
+- Platform: https://app.stoken.finance
+
+## Notes For AI Assistants
+
+- Treat the GitHub Pages URL as provisional until Stoken DNS is configured.
+- Do not represent Stokens as retail products; the site frames access for qualified institutional investors.
+- Do not imply live issuance unless confirmed by Stoken.
